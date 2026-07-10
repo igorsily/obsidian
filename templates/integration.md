@@ -24,33 +24,33 @@ tags:
 
 # {{title}}
 
-> External Integration Documentation
+> Documentação de Integração Externa
 
 ---
 
-# Purpose
+# Propósito
 
-Describe the integration.
+Descreva a integração.
 
-Answer:
+Responda:
 
-What external system is integrated?
+Qual sistema externo está integrado?
 
-Why is this integration required?
+Por que esta integração é necessária?
 
-Who depends on it?
+Quem depende dela?
 
 ---
 
-# Overview
+# Visão Geral
 
-Provide a high-level overview.
+Forneça uma visão de alto nível.
 
-Examples
+Exemplos
 
 Payment Gateway
 
-Authentication Provider
+Provedor de Autenticação
 
 Maps
 
@@ -64,37 +64,37 @@ Cloud Storage
 
 ERP
 
-Government API
+API Governamental
 
-Internal Service
-
----
-
-# Business Context
-
-Explain why this integration exists.
-
-Examples
-
-Receive payments
-
-Send notifications
-
-Authenticate users
-
-Store files
-
-Synchronize data
-
-Generate invoices
-
-Validate documents
+Serviço Interno
 
 ---
 
-# Provider Information
+# Contexto de Negócio
 
-Document
+Explique por que esta integração existe.
+
+Exemplos
+
+Receber pagamentos
+
+Enviar notificações
+
+Autenticar usuários
+
+Armazenar arquivos
+
+Sincronizar dados
+
+Gerar invoices
+
+Validar documentos
+
+---
+
+# Informações do Provedor
+
+Documente
 
 Provider
 
@@ -102,19 +102,19 @@ Service
 
 Environment
 
-Official Documentation
+Documentação Oficial
 
-Support Contact
+Contato de Suporte
 
-Dashboard URL
+URL do Dashboard
 
 Status Page
 
 ---
 
-# Authentication
+# Autenticação
 
-Describe
+Descreva
 
 API Keys
 
@@ -130,25 +130,25 @@ Bearer Token
 
 Certificates
 
-Rotation strategy
+Estratégia de rotação
 
-Secret storage
+Armazenamento de secrets
 
-Never expose secrets.
+Nunca exponha secrets.
 
 ---
 
 # Endpoints
 
-Document every relevant endpoint.
+Documente cada endpoint relevante.
 
-Include
+Inclua
 
-Purpose
+Propósito
 
-HTTP Method
+Método HTTP
 
-Authentication
+Autenticação
 
 Request
 
@@ -156,17 +156,17 @@ Response
 
 Timeout
 
-Retry policy
+Política de retry
 
-Idempotency
+Idempotência
 
 ---
 
-# Data Flow
+# Fluxo de Dados
 
-Explain how data moves.
+Explique como os dados se movem.
 
-Example
+Exemplo
 
 User
 
@@ -200,147 +200,147 @@ Notification
 
 ---
 
-# Request Mapping
+# Mapeamento de Request
 
-Describe
+Descreva
 
-Input fields
+Campos de entrada
 
-Transformations
+Transformações
 
-Validation
+Validação
 
-Serialization
+Serialização
 
 Headers
 
 Encoding
 
-Compression
+Compressão
 
 ---
 
-# Response Mapping
+# Mapeamento de Response
 
-Describe
+Descreva
 
-Returned fields
+Campos retornados
 
-Error mapping
+Mapeamento de erros
 
 Status codes
 
-Validation
+Validação
 
-Persistence
+Persistência
 
-Events
+Eventos
 
 ---
 
-# Failure Modes
+# Modos de Falha
 
-Document expected failures.
+Documente falhas esperadas.
 
-Examples
+Exemplos
 
 Timeout
 
-Authentication failure
+Falha de autenticação
 
 Rate limit
 
-Invalid payload
+Payload inválido
 
-Unavailable service
+Serviço indisponível
 
-Partial failure
+Falha parcial
 
-Unexpected response
-
----
-
-# Retry Strategy
-
-Describe
-
-Retry conditions
-
-Retry intervals
-
-Backoff strategy
-
-Maximum attempts
-
-Dead letter behavior
-
-Manual intervention
+Resposta inesperada
 
 ---
 
-# Error Handling
+# Estratégia de Retry
 
-Explain
+Descreva
 
-Validation errors
+Condições de retry
 
-Network failures
+Intervalos de retry
 
-Business errors
+Estratégia de backoff
 
-Infrastructure errors
+Máximo de tentativas
 
-Fallback behavior
+Comportamento de dead letter
+
+Intervenção manual
 
 ---
 
-# Security
+# Tratamento de Erros
 
-Document
+Explique
 
-Authentication
+Erros de validação
 
-Authorization
+Falhas de rede
 
-Secret storage
+Erros de negócio
 
-Token expiration
+Erros de infraestrutura
 
-Certificate management
+Comportamento de fallback
 
-Encryption
+---
 
-Audit
+# Segurança
+
+Documente
+
+Autenticação
+
+Autorização
+
+Armazenamento de secrets
+
+Expiração de token
+
+Gerenciamento de certificados
+
+Criptografia
+
+Auditoria
 
 ---
 
 # Performance
 
-Document
+Documente
 
-Latency
+Latência
 
 Caching
 
-Concurrency
+Concorrência
 
 Connection pooling
 
 Rate limiting
 
-Expected throughput
+Throughput esperado
 
 ---
 
-# Monitoring
+# Monitoramento
 
-Document
+Documente
 
-Metrics
+Métricas
 
 Logs
 
-Alerts
+Alertas
 
 Dashboards
 
@@ -350,13 +350,13 @@ Health checks
 
 ---
 
-# Testing
+# Testes
 
-Explain
+Explique
 
-Unit testing
+Testes unitários
 
-Integration testing
+Testes de integração
 
 Sandbox
 
@@ -366,21 +366,21 @@ Contract testing
 
 Load testing
 
-Manual validation
+Validação manual
 
 ---
 
-# Operational Considerations
+# Considerações Operacionais
 
-Document
+Documente
 
-Maintenance windows
+Janelas de manutenção
 
 Rate limits
 
-Provider limitations
+Limitações do provedor
 
-Versioning
+Versionamento
 
 Breaking changes
 
@@ -388,73 +388,73 @@ Rollback
 
 ---
 
-# Known Limitations
+# Limitações Conhecidas
 
-Document
+Documente
 
-API limitations
+Limitações da API
 
-Business limitations
+Limitações de negócio
 
-Technical debt
+Dívida técnica
 
-Known bugs
+Bugs conhecidos
 
-Provider restrictions
+Restrições do provedor
 
 ---
 
-# Related Features
+# Features Relacionadas
 
-Reference
+Referência
 
 [[Feature]]
 
 ---
 
-# Related Architecture
+# Arquitetura Relacionada
 
-Reference
+Referência
 
 [[Architecture]]
 
 ---
 
-# Related Infrastructure
+# Infraestrutura Relacionada
 
-Reference
+Referência
 
-[[Infrastructure]]
-
----
-
-# Related Business Rules
-
-Reference
-
-[[Business Rule]]
+[[Knowledge/Infrastructure]]
 
 ---
 
-# Related ADR
+# Regras de Negócio Relacionadas
 
-Reference
+Referência
+
+[[Knowledge/Business/Business Rule]]
+
+---
+
+# ADR Relacionado
+
+Referência
 
 [[ADR]]
 
 ---
 
-# Related Troubleshooting
+# Troubleshooting Relacionado
 
-Reference
+Referência
 
-[[Troubleshooting]]
+[[Knowledge/Troubleshooting]]
 
 ---
 
-# Related Handoffs
+# Handoffs Relacionados
 
-Reference
+Referência
 
 [[Handoffs]]
 

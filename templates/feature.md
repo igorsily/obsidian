@@ -24,73 +24,73 @@ tags:
 
 # {{title}}
 
-> Feature Documentation
+> Documentação de Feature
 
 ---
 
-# Purpose
+# Propósito
 
-Describe the feature.
+Descreva a feature.
 
-Answer:
+Responda:
 
-What does this feature do?
+O que esta feature faz?
 
-Who uses it?
+Quem a utiliza?
 
-Why does it exist?
+Por que ela existe?
 
-Avoid implementation details.
-
----
-
-# Business Context
-
-Explain the business process.
-
-Who requested it?
-
-Which business process depends on it?
-
-What problem does it solve?
+Evite detalhes de implementação.
 
 ---
 
-# Functional Overview
+# Contexto de Negócio
 
-Describe the behavior from the user's perspective.
+Explique o processo de negócio.
 
-Focus on expected behavior.
+Quem solicitou?
 
-Avoid technical implementation.
+Qual processo de negócio depende dela?
 
----
-
-# User Flow
-
-Describe the complete workflow.
-
-Example
-
-1. User opens the registration screen.
-
-2. User fills the required fields.
-
-3. Validation is executed.
-
-4. Data is persisted.
-
-5. Confirmation is displayed.
-
-Alternative flows should be documented separately.
+Qual problema ela resolve?
 
 ---
 
-# Actors
+# Visão Funcional
 
-List every actor.
+Descreva o comportamento do ponto de vista do usuário.
 
-Examples
+Foque no comportamento esperado.
+
+Evite implementação técnica.
+
+---
+
+# Fluxo do Usuário
+
+Descreva o fluxo completo.
+
+Exemplo
+
+1. O usuário abre a tela de cadastro.
+
+2. O usuário preenche os campos obrigatórios.
+
+3. A validação é executada.
+
+4. Os dados são persistidos.
+
+5. A confirmação é exibida.
+
+Fluxos alternativos devem ser documentados separadamente.
+
+---
+
+# Atores
+
+Liste cada ator.
+
+Exemplos
 
 Administrator
 
@@ -106,81 +106,81 @@ Integration
 
 ---
 
-# Permissions
+# Permissões
 
-Describe who may execute the feature.
+Descreva quem pode executar a feature.
 
-Reference authorization documentation whenever possible.
+Referencie documentação de autorização sempre que possível.
 
 ---
 
-# Inputs
+# Entradas
 
-Document
+Documente
 
-User input
+Entrada do usuário
 
-API payload
+Payload da API
 
-Events
+Eventos
 
-Files
+Arquivos
 
 Imports
 
-Parameters
+Parâmetros
 
-Required fields
+Campos obrigatórios
 
-Optional fields
-
----
-
-# Outputs
-
-Describe
-
-Responses
-
-Generated entities
-
-Events
-
-Notifications
-
-Reports
-
-Files
-
-Side effects
+Campos opcionais
 
 ---
 
-# Validations
+# Saídas
 
-Describe every important validation.
+Descreva
 
-Examples
+Respostas
 
-Required fields
+Entidades geradas
 
-Business validations
+Eventos
 
-Authorization
+Notificações
 
-Duplicate detection
+Relatórios
 
-State validation
+Arquivos
 
-Ownership validation
+Efeitos colaterais
 
 ---
 
-# Business Rules
+# Validações
 
-Reference all related business rules.
+Descreva cada validação importante.
 
-Examples
+Exemplos
+
+Campos obrigatórios
+
+Validações de negócio
+
+Autorização
+
+Detecção de duplicidade
+
+Validação de estado
+
+Validação de ownership
+
+---
+
+# Regras de Negócio
+
+Referencie todas as regras de negócio relacionadas.
+
+Exemplos
 
 [[Owner Validation]]
 
@@ -190,11 +190,11 @@ Examples
 
 ---
 
-# Architecture
+# Arquitetura
 
-Reference affected architecture.
+Referencie a arquitetura afetada.
 
-Examples
+Exemplos
 
 [[Authentication]]
 
@@ -204,11 +204,11 @@ Examples
 
 ---
 
-# Integrations
+# Integrações
 
-Reference external systems.
+Referencie sistemas externos.
 
-Examples
+Exemplos
 
 [[Stripe]]
 
@@ -220,11 +220,11 @@ Examples
 
 ---
 
-# Infrastructure
+# Infraestrutura
 
-Reference infrastructure.
+Referencie infraestrutura.
 
-Examples
+Exemplos
 
 [[Redis]]
 
@@ -234,11 +234,11 @@ Examples
 
 ---
 
-# Related ADR
+# ADR Relacionado
 
-Reference important decisions.
+Referencie decisões importantes.
 
-Examples
+Exemplos
 
 [[ADR-004 Cache]]
 
@@ -246,11 +246,11 @@ Examples
 
 ---
 
-# Related Handoffs
+# Handoffs Relacionados
 
-Reference implementation history.
+Referencie o histórico de implementação.
 
-Examples
+Exemplos
 
 [[2026-07-10 Owner Registration]]
 
@@ -258,91 +258,91 @@ Examples
 
 ---
 
-# Edge Cases
+# Casos Extremos
 
-Document uncommon situations.
+Documente situações incomuns.
 
-Examples
+Exemplos
 
-Duplicate records
+Registros duplicados
 
-Expired sessions
+Sessões expiradas
 
-Deleted users
+Usuários excluídos
 
-Partial failures
+Falhas parciais
 
-Network interruption
+Interrupção de rede
 
-Legacy data
-
----
-
-# Error Handling
-
-Describe
-
-Validation errors
-
-Business errors
-
-Infrastructure failures
-
-Integration failures
-
-Retry behavior
-
-Rollback behavior
+Dados legados
 
 ---
 
-# Performance Considerations
+# Tratamento de Erros
 
-Describe
+Descreva
 
-Expected load
+Erros de validação
+
+Erros de negócio
+
+Falhas de infraestrutura
+
+Falhas de integração
+
+Comportamento de retry
+
+Comportamento de rollback
+
+---
+
+# Considerações de Performance
+
+Descreva
+
+Carga esperada
 
 Caching
 
-Indexes
+Índices
 
-Pagination
+Paginação
 
-Async processing
+Processamento assíncrono
 
-Known bottlenecks
+Gargalos conhecidos
 
 ---
 
-# Security Considerations
+# Considerações de Segurança
 
-Describe
+Descreva
 
-Authentication
+Autenticação
 
-Authorization
+Autorização
 
-Audit
+Auditoria
 
-Sensitive data
+Dados sensíveis
 
-Encryption
+Criptografia
 
 Rate limiting
 
-Permissions
+Permissões
 
 ---
 
-# Monitoring
+# Monitoramento
 
-Describe
+Descreva
 
-Metrics
+Métricas
 
 Logs
 
-Alerts
+Alertas
 
 Dashboards
 
@@ -352,41 +352,41 @@ Tracing
 
 ---
 
-# Known Limitations
+# Limitações Conhecidas
 
-Describe
+Descreva
 
-Current limitations
+Limitações atuais
 
-Technical debt
+Dívida técnica
 
-Framework limitations
+Limitações de framework
 
-Business constraints
+Restrições de negócio
 
-Operational limitations
-
----
-
-# Future Improvements
-
-Document ideas that could improve the feature.
-
-Avoid implementation tasks.
-
-Describe desired evolution.
+Limitações operacionais
 
 ---
 
-# Related Documentation
+# Melhorias Futuras
+
+Documente ideias que poderiam melhorar a feature.
+
+Evite tarefas de implementação.
+
+Descreva a evolução desejada.
+
+---
+
+# Documentação Relacionada
 
 [[Architecture]]
 
-[[Business]]
+[[Knowledge/Business]]
 
-[[Infrastructure]]
+[[Knowledge/Infrastructure]]
 
-[[Troubleshooting]]
+[[Knowledge/Troubleshooting]]
 
 [[ADR]]
 

@@ -1,62 +1,95 @@
 # Engineering Memory
 
-> Give your AI agents long-term engineering memory through Obsidian.
+> Dê memória de engenharia de longo prazo aos seus agentes de IA com Obsidian.
 
-Engineering Memory is an AI-agnostic knowledge capture framework designed to preserve software engineering knowledge across conversations.
+Engineering Memory é um framework agnóstico de captura de conhecimento. Ele preserva conhecimento de engenharia de software entre conversas.
 
-Instead of generating disposable summaries, Engineering Memory continuously builds a persistent knowledge base.
-
----
-
-## Philosophy
-
-Every development task generates knowledge.
-
-Knowledge should not disappear when the conversation ends.
-
-Documentation is part of the implementation.
+Em vez de gerar resumos descartáveis, o framework constrói continuamente uma base de conhecimento persistente.
 
 ---
 
-## Goals
+## Filosofia
 
-- Preserve engineering context
-- Capture architectural decisions
-- Document business rules
-- Track implementation history
-- Build a second brain inside Obsidian
+Toda tarefa de desenvolvimento gera conhecimento.
 
----
+O conhecimento não deve desaparecer quando a conversa termina.
 
-## Features
-
-- AI agnostic
-- Automatic project discovery
-- Automatic repository analysis
-- Obsidian integration
-- Wiki Links
-- Handoff generation
-- ADR generation
-- Business Rule extraction
-- Troubleshooting documentation
-- Architecture documentation
-- Incremental documentation
-- Knowledge deduplication
+Documentação faz parte da implementação.
 
 ---
 
-## Supported Agents
+## Objetivos
+
+- Preservar contexto de engenharia
+- Capturar decisões arquiteturais
+- Documentar regras de negócio
+- Registrar histórico de implementação
+- Isolar documentação por projeto
+- Compartilhar conhecimento reutilizável de forma global
+- Construir um segundo cérebro no Obsidian
+
+---
+
+## Instalação rápida
+
+```bash
+npx skills add igorsily/obsidian
+```
+
+Instalação global no Cursor:
+
+```bash
+npx skills add igorsily/obsidian -g -a cursor -y
+```
+
+Listar skills do repositório:
+
+```bash
+npx skills add igorsily/obsidian --list
+```
+
+Detalhes em [INSTALL.md](INSTALL.md).
+
+---
+
+## Funcionalidades
+
+- Agnóstico de agente de IA
+- Descoberta automática de projeto
+- Inicialização automática de projeto
+- Análise automática de repositório
+- Vault Obsidian multi-projeto
+- Pasta global `Knowledge/`
+- Integração com Obsidian
+- Wiki Links com path qualificado
+- Geração de handoffs
+- Geração de ADRs
+- Extração de regras de negócio
+- Documentação de troubleshooting
+- Documentação de arquitetura
+- Documentação incremental
+- Deduplicação de conhecimento
+
+---
+
+## Agentes suportados
 
 - Cursor
 - Claude Code
 - Codex
 - Gemini CLI
 - OpenAI Agents
-- Any Markdown-capable coding assistant
+- Qualquer assistente capaz de seguir instruções em Markdown
+
+Instalação multi-agente via `npx skills`:
+
+```bash
+npx skills add igorsily/obsidian -a cursor -a claude-code -g
+```
 
 ---
 
-## Default Vault
+## Vault padrão
 
 ```
 ~/obsidian
@@ -64,60 +97,91 @@ Documentation is part of the implementation.
 
 ---
 
-## Folder Structure
+## Estrutura de pastas
 
 ```
-Projects/
-    <Project>/
-        README.md
-        INDEX.md
-        Handoffs/
-        ADR/
-        Architecture/
-        Business/
-        Infrastructure/
-        Frameworks/
-        Decisions/
-        Features/
-        Bugs/
-        Releases/
-        Troubleshooting/
+~/obsidian/
+
+    Projects/
+
+        <Project>/
+
+            INDEX.md
+            README.md
+            Architecture.md
+
+            ADR/
+            Handoffs/
+            Releases/
+
+            Knowledge/
+
+                Business/
+                Features/
+                Bugs/
+                Infrastructure/
+                Integrations/
+                Troubleshooting/
+                Frameworks/
+
+    Knowledge/
+
+        Java/
+        Spring/
+        Angular/
+        Docker/
+        PostgreSQL/
+        Redis/
+        Linux/
+        Git/
+        AI/
+
+    Templates/
+
+    Inbox/
 ```
+
+Novos projetos são inicializados a partir de `project-template/` neste repositório.
 
 ---
 
-## Core Principles
+## Princípios
 
-Engineering Memory follows six principles.
+1. Nunca perder conhecimento.
+2. Nunca duplicar documentação.
+3. Explicar decisões.
+4. Descobrir o contexto do projeto automaticamente.
+5. Isolar a documentação por projeto.
+6. Manter conhecimento de engenharia reutilizável no escopo global.
+7. Conectar conhecimento com wiki links path-qualified.
+8. Manter a documentação continuamente atualizada.
+9. Escrever a documentação do vault em Português Brasileiro.
 
-1. Never lose knowledge.
+---
 
-2. Never duplicate documentation.
+## Idioma
 
-3. Explain decisions.
+Instruções do skill, templates e documentação gerada no vault usam **Português Brasileiro**.
 
-4. Discover project context automatically.
-
-5. Link related knowledge.
-
-6. Keep documentation continuously updated.
+Nomes de pastas, paths e identificadores técnicos permanecem em inglês.
 
 ---
 
 ## Roadmap
 
-Version 1.0
+Versão 1.0
 
-- Foundation
-- Knowledge Capture
+- Fundação
+- Vault multi-projeto
+- Captura de conhecimento
 - Templates
-- Examples
-- Documentation
+- Instalação via `npx skills`
+- Documentação
 
-Future versions may extend integrations while preserving backward compatibility.
+Versões futuras podem estender integrações sem quebrar compatibilidade.
 
 ---
 
-## License
+## Licença
 
 MIT

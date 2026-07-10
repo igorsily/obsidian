@@ -1,24 +1,26 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+Todas as mudanças relevantes deste projeto serão documentadas neste arquivo.
 
-The format follows Keep a Changelog.
+O formato segue Keep a Changelog.
 
-Semantic Versioning is used.
+O versionamento segue Semantic Versioning.
 
 ---
 
 ## [1.0.0]
 
-### Added
+### Adicionado
 
-- Initial release
-- AI-agnostic engineering memory
-- Obsidian integration
-- Automatic project discovery
-- Knowledge capture
-- Architecture documentation
-- ADR support
-- Business rule extraction
-- Troubleshooting knowledge
-- Wiki-link generation
+- Release inicial
+- Memória de engenharia agnóstica de IA
+- Integração com Obsidian
+- Vault multi-projeto com isolamento
+- Pasta global `Knowledge/`
+- Bootstrap automático via `project-template/`
+- Descoberta automática de projeto
+- Captura de conhecimento
+- Documentação de arquitetura
+- Templates de handoff, ADR, feature, bug e demais tipos
+- Instalação via `npx skills add igorsily/obsidian`
+- Instruções e templates em Português Brasileiro

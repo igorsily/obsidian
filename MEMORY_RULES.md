@@ -5,47 +5,79 @@ Version: 1.0.0
 
 ---
 
-# Purpose
+# Propósito
 
-Not every piece of information deserves permanent storage.
+Nem toda informação merece armazenamento permanente.
 
-The purpose of these rules is to ensure that only valuable engineering knowledge becomes part of the project's long-term memory.
+O propósito destas regras é garantir que apenas conhecimento de engenharia valioso se torne parte da memória de longo prazo.
 
-The knowledge base should become more useful over time, not larger.
+A base de conhecimento deve ficar mais útil com o tempo, não apenas maior.
 
-Always optimize for signal over noise.
-
----
-
-# Memory Philosophy
-
-Think like an experienced software engineer.
-
-Ask yourself:
-
-"If I return to this project in one year, would I be glad this information was documented?"
-
-If the answer is no,
-
-do not store it.
+Sempre otimize por sinal em vez de ruído.
 
 ---
 
-# Long-Term Knowledge
+# Roteamento de Armazenamento
 
-The following information should almost always be preserved.
+Antes de salvar qualquer documento, determine:
+
+Isto é conhecimento de engenharia reutilizável?
+
+Se SIM
+
+Armazene em
+
+~/obsidian/Knowledge/
+
+Caso contrário
+
+Armazene em
+
+~/obsidian/Projects/<Project>/
+
+| Critério | Destino |
+|---|---|
+| Conhecimento de engenharia reutilizável entre projetos (Docker, Spring, Redis, Git, DDD, PostgreSQL, Linux, Java, Angular, AI) | ~/obsidian/Knowledge/<Area>/ |
+| Conhecimento específico do projeto (business rules, features, bugs, ADRs, handoffs, releases, infraestrutura do projeto, troubleshooting do projeto, peculiaridades de framework do projeto) | ~/obsidian/Projects/<Project>/... |
+| Rascunhos temporários e notas inacabadas | ~/obsidian/Inbox/ |
+
+Nunca misture conhecimento de repositórios diferentes.
+
+Nunca armazene notas específicas de projeto na pasta global Knowledge.
+
+Nunca armazene notas globais de engenharia reutilizável dentro de uma pasta de projeto quando não forem específicas do projeto.
+
+---
+
+# Filosofia de Memória
+
+Pense como um engenheiro de software experiente.
+
+Pergunte a si mesmo:
+
+"Se eu voltar a este projeto daqui a um ano, ficaria feliz que esta informação foi documentada?"
+
+Se a resposta for não,
+
+não armazene.
+
+---
+
+# Conhecimento de Longo Prazo
+
+As informações a seguir devem ser preservadas quase sempre.
 
 ## Architecture
 
-Examples
+Exemplos
 
-System boundaries
+Limites do sistema
 
-Modules
+Módulos
 
-Services
+Serviços
 
-Data flow
+Fluxo de dados
 
 Authentication
 
@@ -59,59 +91,59 @@ Infrastructure
 
 API design
 
-Dependency relationships
+Relações de dependência
 
-Deployment model
+Modelo de deploy
 
 ---
 
 ## Business Rules
 
-Document business knowledge.
+Documente conhecimento de negócio.
 
-Examples
+Exemplos
 
-Who may perform an action.
+Quem pode executar uma ação.
 
-Validation rules.
+Regras de validação.
 
-State transitions.
+Transições de estado.
 
-Domain constraints.
+Restrições de domínio.
 
-Financial calculations.
+Cálculos financeiros.
 
-Permission rules.
+Regras de permissão.
 
-Lifecycle rules.
+Regras de ciclo de vida.
 
-Never assume these rules are obvious.
+Nunca assuma que essas regras são óbvias.
 
 ---
 
-## Technical Decisions
+## Decisões Técnicas
 
-Document every meaningful decision.
+Documente toda decisão significativa.
 
-Include:
+Inclua:
 
-Decision
+Decisão
 
-Reason
+Motivo
 
-Alternatives
+Alternativas
 
 Trade-offs
 
-Consequences
+Consequências
 
-Future engineers should understand why the decision exists.
+Engenheiros futuros devem entender por que a decisão existe.
 
 ---
 
-## Infrastructure Knowledge
+## Conhecimento de Infraestrutura
 
-Preserve knowledge about
+Preserve conhecimento sobre
 
 Docker
 
@@ -139,77 +171,103 @@ Monitoring
 
 Logging
 
+Se o conhecimento for reutilizável entre projetos, armazene em:
+
+~/obsidian/Knowledge/
+
+Se o conhecimento for específico do sistema atual, armazene em:
+
+Projects/<Project>/Knowledge/Infrastructure/
+
 ---
 
-## Framework Knowledge
+## Conhecimento de Framework
 
-Capture project-specific framework knowledge.
+Capture conhecimento de framework no escopo correto.
 
-Examples
+Peculiaridades de framework específicas do projeto pertencem a:
 
-Spring Boot conventions
+Projects/<Project>/Knowledge/Frameworks/
 
-Angular architecture
+Exemplos
 
-React patterns
+Spring Boot conventions used in this repository
 
-Next.js limitations
+Angular architecture choices in this codebase
 
-Hibernate behavior
+Hibernate quirks discovered here
 
-MapLibre configuration
+MapLibre configuration unique to this project
 
-Avoid copying official documentation.
+Conhecimento geral reutilizável de framework pertence a:
 
-Only preserve knowledge discovered inside the project.
+~/obsidian/Knowledge/
+
+Exemplos
+
+Spring
+
+Angular
+
+React
+
+Next.js
+
+Evite copiar documentação oficial.
+
+Preserve apenas conhecimento descoberto por trabalho real de engenharia.
 
 ---
 
 ## Troubleshooting
 
-Preserve operational knowledge.
+Preserve conhecimento operacional do projeto atual.
 
-Document:
+Documente:
 
-Symptoms
+Sintomas
 
-Diagnosis
+Diagnóstico
 
-Root Cause
+Causa Raiz
 
-Resolution
+Resolução
 
-Prevention
+Prevenção
 
-This knowledge becomes extremely valuable over time.
+Armazene em:
+
+Projects/<Project>/Knowledge/Troubleshooting/
+
+Este conhecimento se torna extremamente valioso com o tempo.
 
 ---
 
 ## Performance
 
-Document performance discoveries.
+Documente descobertas de performance.
 
-Examples
+Exemplos
 
-Expensive queries.
+Queries caras.
 
-Caching strategies.
+Estratégias de cache.
 
 Memory leaks.
 
-Thread bottlenecks.
+Gargalos de thread.
 
-Network latency.
+Latência de rede.
 
-Large payloads.
+Payloads grandes.
 
-Optimization decisions.
+Decisões de otimização.
 
 ---
 
 ## Security
 
-Document security decisions.
+Documente decisões de segurança.
 
 Authentication.
 
@@ -223,147 +281,159 @@ Rate limiting.
 
 Audit logging.
 
-Never expose secrets.
+Nunca exponha secrets.
 
 ---
 
 ## Integrations
 
-Document external integrations.
+Documente integrações externas.
 
-Include
+Inclua
 
-Purpose
+Propósito
 
 Authentication
 
-Limitations
+Limitações
 
-Failure modes
+Modos de falha
 
-Dependencies
+Dependências
 
 ---
 
-# Temporary Knowledge
+# Conhecimento Temporário
 
-Some information should not become permanent.
+Algumas informações não devem se tornar permanentes.
 
-Examples
+Exemplos
 
-Today's discussion.
+Discussão de hoje.
 
-Temporary implementation ideas.
+Ideias temporárias de implementação.
 
 Brainstorming.
 
-Drafts.
+Rascunhos.
 
-Work in progress.
+Trabalho em andamento.
 
-Half-finished experiments.
+Experimentos pela metade.
 
-Meeting notes.
+Notas de reunião.
 
-Personal reminders.
+Lembretes pessoais.
 
-Keep temporary information outside the permanent knowledge base.
+Mantenha informação temporária em:
 
----
+~/obsidian/Inbox/
 
-# Do Not Store
+Não trate notas do Inbox como memória permanente do projeto.
 
-Never preserve:
-
-Random console output
-
-Build logs
-
-Temporary errors
-
-Debug sessions
-
-Stack traces without analysis
-
-Generated files
-
-Personal opinions
-
-Conversation transcripts
-
-Repeated information
-
-Noise
+Promova conhecimento durável para a pasta correta do projeto ou Knowledge global.
 
 ---
 
-# Learning
+# Não Armazene
 
-Whenever something unexpected is discovered:
+Nunca preserve:
 
-Ask:
+Saída aleatória de console
 
-"Will another engineer eventually encounter this?"
+Logs de build
 
-If yes,
+Erros temporários
 
-document it.
+Sessões de debug
 
-Otherwise,
+Stack traces sem análise
 
-discard it.
+Arquivos gerados
 
----
+Opiniões pessoais
 
-# Duplicate Detection
+Transcrições de conversa
 
-Before creating knowledge:
+Informação repetida
 
-Search existing documentation.
-
-If an equivalent concept already exists:
-
-Update it.
-
-Do not duplicate it.
-
-Knowledge should evolve,
-
-not multiply.
+Ruído
 
 ---
 
-# Knowledge Lifecycle
+# Aprendizado
 
-Every piece of knowledge has one of four states.
+Sempre que algo inesperado for descoberto:
+
+Pergunte:
+
+"Outro engenheiro eventualmente encontrará isto?"
+
+Se sim,
+
+documente.
+
+Caso contrário,
+
+descarte.
+
+---
+
+# Detecção de Duplicatas
+
+Antes de criar conhecimento:
+
+Busque documentação existente nesta ordem:
+
+1. ~/obsidian/Projects/<Project>/
+
+2. ~/obsidian/Knowledge/
+
+Nunca busque outras pastas Projects/* como destinos de escrita ou duplicatas para mesclar entre projetos.
+
+Se um conceito equivalente já existir no escopo correto:
+
+Atualize-o.
+
+Não o duplique.
+
+O conhecimento deve evoluir,
+
+não se multiplicar.
+
+---
+
+# Ciclo de Vida do Conhecimento
+
+Cada peça de conhecimento tem um de quatro estados.
 
 ## Active
 
-Current and accurate.
+Atual e preciso.
 
 ## Updated
 
-Existing knowledge improved.
+Conhecimento existente melhorado.
 
 ## Deprecated
 
-Still useful for historical context.
+Ainda útil para contexto histórico.
 
 ## Archived
 
-No longer relevant.
+Não mais relevante.
 
-Never delete historical engineering knowledge without explicit instruction.
+Nunca delete conhecimento histórico de engenharia sem instrução explícita.
 
 ---
 
-# Confidence
+# Confiança
 
-When documenting inferred knowledge,
+Ao documentar conhecimento inferido,
 
-indicate confidence.
+indique a confiança.
 
-Example
+Exemplo
 
 High
 
@@ -371,62 +441,66 @@ Medium
 
 Low
 
-Do not present assumptions as facts.
+Não apresente premissas como fatos.
 
 ---
 
-# Completeness
+# Completude
 
-Perfect documentation is not required.
+Documentação perfeita não é necessária.
 
-Useful documentation is.
+Documentação útil é.
 
-If only part of the knowledge is available,
+Se apenas parte do conhecimento estiver disponível,
 
-document what is known.
+documente o que for conhecido.
 
-Clearly identify unknown areas.
-
----
-
-# Memory Checklist
-
-Before saving information ask:
-
-Is this useful in six months?
-
-Does it explain a decision?
-
-Does it explain a business rule?
-
-Does it explain architecture?
-
-Does it explain infrastructure?
-
-Does it prevent future mistakes?
-
-Does it help another engineer?
-
-If most answers are "No",
-
-do not store it.
+Identifique claramente as áreas desconhecidas.
 
 ---
 
-# Golden Rule
+# Checklist de Memória
 
-Store knowledge.
+Antes de salvar informação, pergunte:
 
-Not conversations.
+Isto é conhecimento de engenharia reutilizável ou específico do projeto?
 
-Store reasoning.
+A pasta de destino está correta?
 
-Not chat history.
+Isto será útil daqui a seis meses?
 
-Store understanding.
+Explica uma decisão?
 
-Not raw information.
+Explica uma regra de negócio?
 
-The purpose of Engineering Memory is to preserve engineering intelligence,
+Explica arquitetura?
 
-not conversation transcripts.
+Explica infraestrutura?
+
+Previne erros futuros?
+
+Ajuda outro engenheiro?
+
+Se a maioria das respostas for "Não",
+
+não armazene.
+
+---
+
+# Regra de Ouro
+
+Armazene conhecimento.
+
+Não conversas.
+
+Armazene raciocínio.
+
+Não histórico de chat.
+
+Armazene entendimento.
+
+Não informação bruta.
+
+O propósito do Engineering Memory é preservar inteligência de engenharia,
+
+não transcrições de conversa.

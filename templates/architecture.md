@@ -18,29 +18,29 @@ tags:
 
 # {{project}} Architecture
 
-> Living architecture document maintained by Engineering Memory.
+> Documento vivo de arquitetura mantido pelo Engineering Memory.
 
 ---
 
-# Overview
+# Visão Geral
 
-Describe the system at a high level.
+Descreva o sistema em alto nível.
 
-Answer:
+Responda:
 
-What problem does this system solve?
+Qual problema este sistema resolve?
 
-Who are its users?
+Quem são seus usuários?
 
-What are the primary responsibilities?
+Quais são as responsabilidades principais?
 
-Avoid implementation details.
+Evite detalhes de implementação.
 
 ---
 
-# Architecture Style
+# Estilo de Arquitetura
 
-Examples
+Exemplos
 
 - Layered
 - Hexagonal
@@ -51,79 +51,79 @@ Examples
 - Event Driven
 - Serverless
 
-If multiple styles coexist,
+Se vários estilos coexistirem,
 
-describe each one.
+descreva cada um.
 
 ---
 
-# System Context
+# Contexto do Sistema
 
-Describe how this project fits into the larger ecosystem.
+Descreva como este projeto se encaixa no ecossistema maior.
 
-Examples
+Exemplos
 
-External APIs
+APIs Externas
 
-Other Services
+Outros Serviços
 
-Cloud Providers
+Provedores Cloud
 
-Authentication Provider
+Provedor de Autenticação
 
 Message Broker
 
-Storage
+Armazenamento
 
-Monitoring
+Monitoramento
 
 ---
 
-# High Level Components
+# Componentes de Alto Nível
 
-Describe every major module.
+Descreva cada módulo principal.
 
-For each module explain:
+Para cada módulo explique:
 
-Purpose
+Propósito
 
-Responsibilities
+Responsabilidades
 
-Dependencies
+Dependências
 
-Communication
+Comunicação
 
 Ownership
 
-Example
+Exemplo
 
 ## Authentication
 
-Responsible for user authentication.
+Responsável pela autenticação de usuários.
 
-Uses JWT.
+Usa JWT.
 
-Depends on Redis.
+Depende do Redis.
 
-Provides security context.
+Fornece o contexto de segurança.
 
 ---
 
 ## Payments
 
-Responsible for payment lifecycle.
+Responsável pelo ciclo de vida de pagamentos.
 
-Consumes Payment Gateway.
+Consome o Payment Gateway.
 
-Publishes payment events.
+Publica eventos de pagamento.
 
 ---
 
-# Data Flow
+# Fluxo de Dados
 
-Explain how information moves through the system.
+Explique como a informação se move pelo sistema.
 
-Example
+Exemplo
 
 User
 
@@ -151,29 +151,29 @@ Database
 
 Response
 
-Describe asynchronous flows separately.
+Descreva fluxos assíncronos separadamente.
 
 ---
 
-# Module Dependencies
+# Dependências entre Módulos
 
-For every module explain:
+Para cada módulo explique:
 
-What it depends on
+Do que depende
 
-Who depends on it
+Quem depende dele
 
-Allowed responsibilities
+Responsabilidades permitidas
 
-Avoid circular dependencies.
+Evite dependências circulares.
 
 ---
 
-# Domain Model
+# Modelo de Domínio
 
-Describe important business entities.
+Descreva as entidades de negócio importantes.
 
-Examples
+Exemplos
 
 User
 
@@ -187,39 +187,39 @@ Payment
 
 Order
 
-Relationship between entities.
+Relacionamento entre entidades.
 
-Business meaning.
+Significado de negócio.
 
-Avoid ORM implementation details.
+Evite detalhes de implementação de ORM.
 
 ---
 
-# Persistence
+# Persistência
 
-Describe:
+Descreva:
 
-Databases
+Bancos de dados
 
 Schemas
 
-Storage strategy
+Estratégia de armazenamento
 
 Caching
 
-Transactions
+Transações
 
-Replication
+Replicação
 
 Backups
 
-Migration strategy
+Estratégia de migração
 
 ---
 
-# API Design
+# Design de API
 
-Document:
+Documente:
 
 REST
 
@@ -231,45 +231,45 @@ Events
 
 Webhooks
 
-Public APIs
+APIs públicas
 
-Private APIs
+APIs privadas
 
-Versioning strategy
+Estratégia de versionamento
 
-Authentication
+Autenticação
 
-Authorization
-
----
-
-# Integrations
-
-Describe every external integration.
-
-Purpose
-
-Authentication
-
-Data exchanged
-
-Failure behavior
-
-Retry strategy
-
-Monitoring
+Autorização
 
 ---
 
-# Infrastructure
+# Integrações
 
-Describe:
+Descreva cada integração externa.
+
+Propósito
+
+Autenticação
+
+Dados trocados
+
+Comportamento em falha
+
+Estratégia de retry
+
+Monitoramento
+
+---
+
+# Infraestrutura
+
+Descreva:
 
 Docker
 
 Kubernetes
 
-Networking
+Rede
 
 Reverse Proxy
 
@@ -281,65 +281,65 @@ Volumes
 
 Scaling
 
-Monitoring
+Monitoramento
 
 Logging
 
-Deployment
+Deploy
 
 ---
 
-# Security
+# Segurança
 
-Document
+Documente
 
-Authentication
+Autenticação
 
-Authorization
+Autorização
 
 Roles
 
-Permissions
+Permissões
 
-Encryption
+Criptografia
 
 Secrets
 
-Audit
+Auditoria
 
 Rate limiting
 
-Session management
+Gerenciamento de sessão
 
 ---
 
 # Performance
 
-Describe
+Descreva
 
 Caching
 
-Pagination
+Paginação
 
-Indexes
+Índices
 
-Async processing
+Processamento assíncrono
 
 Background jobs
 
-Compression
+Compressão
 
 Connection pooling
 
-Performance constraints
+Restrições de performance
 
 ---
 
-# Reliability
+# Confiabilidade
 
-Document
+Documente
 
-Retry strategies
+Estratégias de retry
 
 Circuit breakers
 
@@ -349,19 +349,19 @@ Timeouts
 
 Fallbacks
 
-Monitoring
+Monitoramento
 
-Alerting
+Alertas
 
-Recovery
+Recuperação
 
 ---
 
-# Observability
+# Observabilidade
 
-Document
+Documente
 
-Metrics
+Métricas
 
 Logs
 
@@ -369,27 +369,27 @@ Tracing
 
 Dashboards
 
-Alerts
+Alertas
 
-Monitoring tools
+Ferramentas de monitoramento
 
 ---
 
-# Deployment
+# Deploy
 
-Describe
+Descreva
 
 Build
 
 Release
 
-Deployment
+Deploy
 
 Rollback
 
-Configuration
+Configuração
 
-Environments
+Ambientes
 
 Production
 
@@ -399,21 +399,21 @@ Development
 
 ---
 
-# Technology Stack
+# Stack Tecnológica
 
 Backend
 
 Frontend
 
-Infrastructure
+Infraestrutura
 
-Messaging
+Mensageria
 
-Database
+Banco de dados
 
 Cloud
 
-Libraries
+Bibliotecas
 
 Frameworks
 
@@ -421,11 +421,11 @@ Package Managers
 
 ---
 
-# Architecture Decisions
+# Decisões de Arquitetura
 
-Reference ADRs.
+Referencie ADRs.
 
-Examples
+Exemplos
 
 [[ADR-001 Authentication]]
 
@@ -435,9 +435,9 @@ Examples
 
 ---
 
-# Business Rules
+# Regras de Negócio
 
-Reference
+Referência
 
 [[User Lifecycle]]
 
@@ -447,61 +447,61 @@ Reference
 
 ---
 
-# Related Features
+# Features Relacionadas
 
-Reference major features.
-
----
-
-# Known Limitations
-
-Document
-
-Technical debt
-
-Framework limitations
-
-Operational constraints
-
-Scalability concerns
-
-Migration plans
+Referencie as features principais.
 
 ---
 
-# Future Evolution
+# Limitações Conhecidas
 
-Describe likely architectural changes.
+Documente
 
-Examples
+Dívida técnica
+
+Limitações de framework
+
+Restrições operacionais
+
+Preocupações de escalabilidade
+
+Planos de migração
+
+---
+
+# Evolução Futura
+
+Descreva mudanças arquiteturais prováveis.
+
+Exemplos
 
 Microservices
 
-Caching improvements
+Melhorias de caching
 
-Database migration
+Migração de banco de dados
 
-Cloud migration
+Migração para cloud
 
-Event driven architecture
+Arquitetura orientada a eventos
 
-Scalability
+Escalabilidade
 
 ---
 
-# Related Documentation
+# Documentação Relacionada
 
 [[README]]
 
 [[INDEX]]
 
-[[Infrastructure]]
+[[Knowledge/Infrastructure]]
 
-[[Troubleshooting]]
+[[Knowledge/Troubleshooting]]
 
-[[Integrations]]
+[[Knowledge/Integrations]]
 
-[[Business]]
+[[Knowledge/Business]]
 
 [[ADR]]
 

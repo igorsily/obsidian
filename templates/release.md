@@ -20,51 +20,51 @@ tags:
 
 # Release {{version}}
 
-> Release Documentation
+> Documentação de Release
 
 ---
 
-# Summary
+# Resumo
 
-Provide a high-level overview of this release.
+Forneça uma visão de alto nível desta release.
 
-Describe:
+Descreva:
 
-Why this release exists.
+Por que esta release existe.
 
-Major objectives.
+Objetivos principais.
 
-Expected impact.
+Impacto esperado.
 
 ---
 
-# Release Scope
+# Escopo da Release
 
-Summarize the release.
+Resuma a release.
 
-Examples
+Exemplos
 
-New features
+Novas features
 
-Bug fixes
+Correções de bugs
 
-Infrastructure improvements
+Melhorias de infraestrutura
 
-Performance optimizations
+Otimizações de performance
 
-Security improvements
+Melhorias de segurança
 
-Database migrations
+Migrações de banco de dados
 
-Architecture changes
+Mudanças de arquitetura
 
 ---
 
 # Features
 
-Reference all major features included.
+Referencie todas as features principais incluídas.
 
-Example
+Exemplo
 
 [[Owner Registration]]
 
@@ -74,11 +74,11 @@ Example
 
 ---
 
-# Bug Fixes
+# Correções de Bugs
 
-Reference important bugs.
+Referencie bugs importantes.
 
-Example
+Exemplo
 
 [[Duplicate Owner Validation]]
 
@@ -86,13 +86,13 @@ Example
 
 ---
 
-# Architecture Changes
+# Mudanças de Arquitetura
 
-Describe architecture changes.
+Descreva mudanças de arquitetura.
 
-Reference Architecture notes.
+Referencie notas de Architecture.
 
-Example
+Exemplo
 
 [[Architecture]]
 
@@ -104,9 +104,9 @@ Example
 
 # ADRs
 
-Reference every ADR included in this release.
+Referencie cada ADR incluído nesta release.
 
-Example
+Exemplo
 
 [[ADR-003 Redis]]
 
@@ -114,9 +114,9 @@ Example
 
 ---
 
-# Infrastructure Changes
+# Mudanças de Infraestrutura
 
-Document
+Documente
 
 Docker
 
@@ -126,225 +126,225 @@ RabbitMQ
 
 Cloud
 
-Deployment
+Deploy
 
-Monitoring
+Monitoramento
 
-Networking
+Rede
 
-Reference infrastructure notes whenever possible.
+Referencie notas de infraestrutura sempre que possível.
 
 ---
 
-# Database Changes
+# Mudanças de Banco de Dados
 
-Document
+Documente
 
-Schema changes
+Mudanças de schema
 
-New tables
+Novas tabelas
 
-Indexes
+Índices
 
 Constraints
 
-Migrations
+Migrações
 
 Backfills
 
-Data cleanup
+Limpeza de dados
 
 Breaking changes
 
 ---
 
-# Integrations
+# Integrações
 
-Document changes to
+Documente mudanças em
 
-External APIs
+APIs externas
 
-Authentication providers
+Provedores de autenticação
 
-Messaging
+Mensageria
 
-Cloud services
+Serviços cloud
 
-Storage
+Armazenamento
 
-Payment providers
+Provedores de pagamento
 
 ---
 
-# Security
+# Segurança
 
-Document
+Documente
 
-Authentication
+Autenticação
 
-Authorization
+Autorização
 
-Encryption
+Criptografia
 
 Secrets
 
 Certificates
 
-Permissions
+Permissões
 
 Rate limiting
 
-Audit
+Auditoria
 
 ---
 
 # Performance
 
-Describe
+Descreva
 
 Caching
 
-Indexes
+Índices
 
 Queries
 
-Memory usage
+Uso de memória
 
-CPU usage
+Uso de CPU
 
-Concurrency
+Concorrência
 
-Response time
+Tempo de resposta
 
 Background jobs
 
 ---
 
-# Deployment Notes
+# Notas de Deploy
 
-Document
+Documente
 
-Deployment strategy
+Estratégia de deploy
 
 Downtime
 
-Maintenance window
+Janela de manutenção
 
-Rollback requirements
+Requisitos de rollback
 
 Feature flags
 
-Environment variables
+Variáveis de ambiente
 
-Configuration updates
+Atualizações de configuração
 
 ---
 
-# Validation
+# Validação
 
-Describe how this release was validated.
+Descreva como esta release foi validada.
 
-Examples
+Exemplos
 
 Smoke tests
 
-Regression tests
+Testes de regressão
 
-Integration tests
+Testes de integração
 
-Performance tests
+Testes de performance
 
-Manual validation
+Validação manual
 
-Production monitoring
-
----
-
-# Risks
-
-Document
-
-Known issues
-
-Operational risks
-
-Performance risks
-
-Security risks
-
-Migration risks
-
-Rollback risks
+Monitoramento em produção
 
 ---
 
-# Rollback Strategy
+# Riscos
 
-Describe
+Documente
 
-Rollback procedure
+Problemas conhecidos
 
-Dependencies
+Riscos operacionais
 
-Database considerations
+Riscos de performance
 
-Recovery steps
+Riscos de segurança
 
-Expected downtime
+Riscos de migração
 
----
-
-# Known Limitations
-
-Describe
-
-Features intentionally postponed
-
-Technical debt
-
-Temporary workarounds
-
-Operational limitations
+Riscos de rollback
 
 ---
 
-# Lessons Learned
+# Estratégia de Rollback
 
-Document discoveries made during the release process.
+Descreva
 
-Examples
+Procedimento de rollback
 
-Deployment improvements
+Dependências
 
-Monitoring gaps
+Considerações de banco de dados
 
-Unexpected behavior
+Passos de recuperação
 
-Infrastructure observations
-
-Testing improvements
+Downtime esperado
 
 ---
 
-# Metrics
+# Limitações Conhecidas
 
-If available include
+Descreva
 
-Deployment duration
+Features intencionalmente adiadas
+
+Dívida técnica
+
+Workarounds temporários
+
+Limitações operacionais
+
+---
+
+# Lições Aprendidas
+
+Documente descobertas feitas durante o processo de release.
+
+Exemplos
+
+Melhorias de deploy
+
+Lacunas de monitoramento
+
+Comportamento inesperado
+
+Observações de infraestrutura
+
+Melhorias de testes
+
+---
+
+# Métricas
+
+Se disponível inclua
+
+Duração do deploy
 
 Downtime
 
-Performance improvements
+Melhorias de performance
 
-Number of bugs fixed
+Número de bugs corrigidos
 
-Number of features delivered
+Número de features entregues
 
-Migration duration
+Duração da migração
 
 ---
 
-# Related Documentation
+# Documentação Relacionada
 
 ## Features
 
@@ -366,13 +366,13 @@ Migration duration
 
 ## Infrastructure
 
-[[Infrastructure]]
+[[Knowledge/Infrastructure]]
 
 ---
 
 ## Business Rules
 
-[[Business]]
+[[Knowledge/Business]]
 
 ---
 
@@ -390,13 +390,13 @@ Migration duration
 
 ## Troubleshooting
 
-[[Troubleshooting]]
+[[Knowledge/Troubleshooting]]
 
 ---
 
 ## Handoffs
 
-Reference every implementation handoff included.
+Referencie cada handoff de implementação incluído.
 
 ---
 

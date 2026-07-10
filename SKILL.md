@@ -2,84 +2,155 @@
 name: engineering-memory
 version: 1.0.0
 author: Igor Sily
-description: AI-agnostic engineering memory framework for capturing and maintaining long-term project knowledge inside an Obsidian vault.
+description: Framework de memória de engenharia para Obsidian. Use ao documentar handoffs, ADRs, arquitetura, regras de negócio, troubleshooting ou ao preservar conhecimento de projetos de software.
 ---
 
 # Engineering Memory
 
-## Mission
+## Missão
 
-Your responsibility is not only to implement software.
+Sua responsabilidade não é apenas implementar software.
 
-Your responsibility is to preserve engineering knowledge.
+Sua responsabilidade é preservar conhecimento de engenharia.
 
-Every completed task should leave the project easier to understand than before.
+Toda tarefa concluída deve deixar o projeto mais fácil de entender do que antes.
 
-Assume every conversation will eventually disappear.
+Assuma que toda conversa eventualmente desaparecerá.
 
-The documentation becomes the project's long-term memory.
+A documentação se torna a memória de longo prazo do projeto.
 
-Implementation is only complete when the relevant knowledge has been preserved.
-
----
-
-# Primary Objectives
-
-Always strive to:
-
-- Preserve context
-- Preserve reasoning
-- Preserve decisions
-- Preserve discoveries
-- Preserve business knowledge
-- Preserve architectural knowledge
-- Preserve troubleshooting knowledge
-
-Never reduce documentation to a simple summary.
+A implementação só está completa quando o conhecimento relevante foi preservado.
 
 ---
 
-# Default Knowledge Base
+# Idioma da Documentação
 
-Unless explicitly instructed otherwise, the knowledge base is located at:
+Toda documentação gerada no vault deve ser escrita em Português Brasileiro (PT-BR).
+
+Exceções obrigatórias — mantenha em inglês:
+
+- nomes de pastas do vault (`Projects/`, `Knowledge/`, `ADR/`, `Handoffs/`, `Releases/`, `Inbox/`, `Templates/`, etc.)
+- paths e wiki links path-qualified
+- identificadores técnicos (nomes de frameworks, ferramentas, arquivos de configuração, commits, branches)
+
+Nunca localize nomes de pastas do vault.
+
+---
+
+# Objetivos Primários
+
+Sempre busque:
+
+- Preservar contexto
+- Preservar raciocínio
+- Preservar decisões
+- Preservar descobertas
+- Preservar conhecimento de negócio
+- Preservar conhecimento arquitetural
+- Preservar conhecimento de troubleshooting
+
+Nunca reduza a documentação a um resumo simples.
+
+---
+
+# Base de Conhecimento Padrão
+
+Salvo instrução explícita em contrário, a base de conhecimento fica em:
 
 ~/obsidian
 
-If it does not exist:
+Estrutura esperada do vault:
 
-- create it
-- initialize the expected directory structure
-- continue normally
+```
+~/obsidian/
 
-Never ask the user where to save documentation unless writing to the default location fails.
+    Projects/
+
+    Knowledge/
+
+    Templates/
+
+    Inbox/
+```
+
+Se não existir:
+
+- crie
+- inicialize a estrutura de diretórios esperada
+- continue normalmente
+
+Nunca pergunte ao usuário onde salvar documentação, a menos que a escrita no local padrão falhe.
 
 ---
 
-# Repository Discovery
+# Isolamento de Projetos
 
-Before documenting anything, inspect the repository.
+Cada projeto possui sua própria documentação.
 
-Determine, when possible:
+Conhecimento de repositórios diferentes nunca deve ser misturado.
 
-- Project Name
-- Repository Name
-- Repository URL
-- Current Branch
-- Current Commit
-- Monorepo or Single Repository
-- Workspace Structure
-- Backend Technologies
-- Frontend Technologies
-- Infrastructure Stack
-- Build Tools
-- Package Managers
-- Programming Languages
-- Testing Frameworks
-- Deployment Strategy
-- CI/CD Platform
-- Architecture Style
+Conhecimento específico de projeto sempre pertence a:
 
-Use every available source including:
+~/obsidian/Projects/<Project>/
+
+Conhecimento de engenharia reutilizável pertence a:
+
+~/obsidian/Knowledge/
+
+Nunca escreva na pasta de outro projeto.
+
+---
+
+# Detecção Automática de Projeto
+
+Antes de documentar qualquer coisa, detecte o repositório atual e determine o nome do projeto.
+
+Mapeie o repositório para:
+
+~/obsidian/Projects/<Project>/
+
+O usuário nunca deve precisar escolher manualmente onde a documentação é armazenada.
+
+Siga DETECTION_RULES.md e PROJECT_RULES.md.
+
+---
+
+# Criação Automática de Projeto
+
+Se a pasta do projeto detectado não existir:
+
+- inicialize replicando `project-template/`
+- continue normalmente
+
+Nenhuma confirmação é necessária.
+
+---
+
+# Descoberta do Repositório
+
+Antes de documentar qualquer coisa, inspecione o repositório.
+
+Determine, quando possível:
+
+- Nome do Projeto
+- Nome do Repositório
+- URL do Repositório
+- Branch Atual
+- Commit Atual
+- Monorepo ou Repositório Único
+- Estrutura do Workspace
+- Tecnologias Backend
+- Tecnologias Frontend
+- Stack de Infraestrutura
+- Ferramentas de Build
+- Gerenciadores de Pacotes
+- Linguagens de Programação
+- Frameworks de Teste
+- Estratégia de Deploy
+- Plataforma de CI/CD
+- Estilo de Arquitetura
+
+Use todas as fontes disponíveis, incluindo:
 
 - package.json
 - README
@@ -95,142 +166,149 @@ Use every available source including:
 - Makefile
 - .git/config
 - GitHub workflows
-- repository structure
+- estrutura do repositório
 
-Never invent information.
+Nunca invente informação.
 
-If uncertain, explicitly record that the information could not be determined.
+Se estiver incerto, registre explicitamente que a informação não pôde ser determinada.
 
 ---
 
-# Understand the Current Work
+# Entenda o Trabalho Atual
 
-Before writing documentation, understand what was actually accomplished.
+Antes de escrever documentação, entenda o que foi realmente realizado.
 
-Use every available source:
+Use todas as fontes disponíveis:
 
-- modified files
+- arquivos modificados
 - git diff
-- staged files
-- commit message
-- repository context
-- current conversation
+- arquivos staged
+- mensagem de commit
+- contexto do repositório
+- conversa atual
 
-Infer:
+Infira:
 
-- objective
-- affected modules
-- architectural impact
-- business impact
-- infrastructure impact
+- objetivo
+- módulos afetados
+- impacto arquitetural
+- impacto de negócio
+- impacto de infraestrutura
 
 ---
 
-# Read Existing Knowledge First
+# Leia o Conhecimento Existente Primeiro
 
-Before creating any new documentation:
+Antes de criar qualquer documentação nova:
 
-Read the existing knowledge stored inside the project's Obsidian folder.
+1. Resolva ~/obsidian/Projects/<Project>/
+2. Leia o conhecimento existente dentro dessa pasta do projeto
+3. Quando o tema for conhecimento de engenharia reutilizável, consulte também ~/obsidian/Knowledge/
+4. Nunca use outra pasta Projects/* como fonte ou destino de escrita da tarefa atual
 
-Prioritize:
+Priorize:
 
 Project README
 
 INDEX
 
-Architecture
+Architecture.md
 
-Business
-
-Decisions
+Knowledge/Business
 
 ADR
 
-Troubleshooting
+Knowledge/Troubleshooting
 
-Recent Handoffs
+Handoffs recentes
 
-Features
+Knowledge/Features
 
-Known Bugs
+Knowledge/Bugs
 
 Releases
 
-The existing knowledge base is the primary source of truth.
+Knowledge/Infrastructure
 
-Avoid contradicting previous documentation.
+Knowledge/Frameworks
+
+Knowledge/Integrations
+
+A base de conhecimento existente é a fonte primária da verdade.
+
+Evite contradizer documentação anterior.
 
 ---
 
-# Knowledge Capture
+# Captura de Conhecimento
 
-At the end of every completed task:
+Ao final de toda tarefa concluída:
 
 Capture:
 
-## What was built
+## O que foi construído
 
-## Why it was built
+## Por que foi construído
 
-## How it works
+## Como funciona
 
-## Important assumptions
+## Premissas importantes
 
 ## Trade-offs
 
-## Lessons learned
+## Lições aprendidas
 
-## Business knowledge discovered
+## Conhecimento de negócio descoberto
 
-## Architectural knowledge discovered
+## Conhecimento arquitetural descoberto
 
-## Infrastructure knowledge discovered
+## Conhecimento de infraestrutura descoberto
 
-## Framework limitations discovered
+## Limitações de framework descobertas
 
-## Risks
+## Riscos
 
-## Future improvements
-
----
-
-# Handoff Generation
-
-Generate a handoff describing the completed work.
-
-The handoff must allow another engineer to continue the project without access to previous conversations.
-
-The handoff should explain:
-
-Context
-
-Objective
-
-Implementation
-
-Technical Decisions
-
-Architecture Impact
-
-Files Changed
-
-Validation
-
-Pending Work
-
-Lessons Learned
-
-Metadata
+## Melhorias futuras
 
 ---
 
-# Knowledge Extraction
+# Geração de Handoff
 
-Not everything belongs inside a handoff.
+Gere um handoff descrevendo o trabalho concluído.
 
-Detect reusable knowledge.
+O handoff deve permitir que outro engenheiro continue o projeto sem acesso às conversas anteriores.
 
-Examples:
+O handoff deve explicar:
+
+Contexto
+
+Objetivo
+
+Implementação
+
+Decisões Técnicas
+
+Impacto na Arquitetura
+
+Arquivos Alterados
+
+Validação
+
+Trabalho Pendente
+
+Lições Aprendidas
+
+Metadados
+
+---
+
+# Extração de Conhecimento
+
+Nem tudo pertence a um handoff.
+
+Detecte conhecimento reutilizável.
+
+Exemplos:
 
 Architecture
 
@@ -254,105 +332,125 @@ Troubleshooting
 
 Coding Standards
 
-Store reusable knowledge separately.
+Antes de armazenar, decida o destino:
+
+Conhecimento de engenharia reutilizável entre projetos
+
+→ ~/obsidian/Knowledge/
+
+Conhecimento específico do projeto
+
+→ ~/obsidian/Projects/<Project>/
+
+Armazene conhecimento reutilizável separado de handoffs e de notas exclusivas do projeto.
 
 ---
 
-# Documentation Rules
+# Regras de Documentação
 
-Always prefer:
+Sempre prefira:
 
-Updating existing notes
+Atualizar notas existentes
 
-instead of
+em vez de
 
-Creating duplicate notes.
+Criar notas duplicadas.
 
-Never create multiple notes describing the same concept.
+Nunca crie múltiplas notas descrevendo o mesmo conceito.
 
 ---
 
 # Wiki Links
 
-Whenever possible create Obsidian wiki links.
+Sempre que possível, crie wiki links do Obsidian.
 
-Example:
+Prefira links path-qualified para preservar o isolamento de projetos.
 
-[[Authentication]]
+Exemplo:
 
-[[Redis]]
+[[Architecture]]
 
-[[Docker]]
+[[Knowledge/Business/Owner Validation]]
 
-[[Spring Boot]]
+[[Knowledge/Infrastructure/Redis]]
 
-[[Angular]]
+[[ADR/ADR-003 Redis]]
 
-[[PostGIS]]
+Para conhecimento global de engenharia:
 
-[[RabbitMQ]]
+[[Knowledge/Docker/Compose Patterns]]
 
-Link related notes whenever a relationship exists.
+[[Knowledge/Spring/Transaction Boundaries]]
 
----
+Evite links nus como [[Redis]] ou [[Authentication]] quando o nome puder existir em outro projeto.
 
-# Writing Style
+Vincule notas relacionadas sempre que existir uma relação.
 
-Write for engineers.
-
-Assume the reader joins the project six months later.
-
-Explain reasoning.
-
-Explain trade-offs.
-
-Explain decisions.
-
-Explain consequences.
-
-Avoid generic summaries.
-
-Capture hidden knowledge.
+Siga LINKING_RULES.md.
 
 ---
 
-# Quality Checklist
+# Estilo de Escrita
 
-Before considering documentation complete, verify:
+Escreva para engenheiros.
 
-✓ Repository identified
+Assuma que o leitor entra no projeto daqui a seis meses.
 
-✓ Technologies identified
+Explique o raciocínio.
 
-✓ Existing knowledge consulted
+Explique trade-offs.
 
-✓ Documentation updated
+Explique decisões.
 
-✓ Duplicate notes avoided
+Explique consequências.
 
-✓ Wiki links created
+Evite resumos genéricos.
 
-✓ Technical decisions documented
-
-✓ Business rules documented
-
-✓ Risks documented
-
-✓ Validation documented
-
-✓ Future work documented
+Capture conhecimento oculto.
 
 ---
 
-# Completion Criteria
+# Checklist de Qualidade
 
-A task is only considered complete when:
+Antes de considerar a documentação completa, verifique:
 
-- the implementation is finished
-- the documentation is updated
-- reusable knowledge has been extracted
-- project memory has been preserved
+✓ Repositório identificado
 
-Documentation is part of the implementation.
+✓ Pasta do projeto resolvida ou inicializada
 
-Never consider code alone to be a completed task.
+✓ Tecnologias identificadas
+
+✓ Conhecimento existente do projeto consultado
+
+✓ Knowledge global consultado quando relevante
+
+✓ Documentação armazenada no escopo correto
+
+✓ Notas duplicadas evitadas
+
+✓ Wiki links path-qualified criados
+
+✓ Decisões técnicas documentadas
+
+✓ Regras de negócio documentadas
+
+✓ Riscos documentados
+
+✓ Validação documentada
+
+✓ Trabalho futuro documentado
+
+---
+
+# Critérios de Conclusão
+
+Uma tarefa só é considerada completa quando:
+
+- a implementação está finalizada
+- a documentação está atualizada
+- o conhecimento reutilizável foi extraído
+- a memória do projeto foi preservada
+
+Documentação faz parte da implementação.
+
+Nunca considere apenas o código como tarefa concluída.

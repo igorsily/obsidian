@@ -5,283 +5,291 @@ Version: 1.0.0
 
 ---
 
-# Purpose
+# Propósito
 
-Documentation is part of the implementation.
+Documentação faz parte da implementação.
 
-Poor documentation creates future technical debt.
+Documentação ruim cria dívida técnica futura.
 
-Before storing any knowledge, evaluate its quality.
+Antes de armazenar qualquer conhecimento, avalie sua qualidade.
 
-The objective is not to maximize the amount of documentation.
+O objetivo não é maximizar a quantidade de documentação.
 
-The objective is to maximize usefulness.
+O objetivo é maximizar a utilidade.
 
 ---
 
-# Documentation Philosophy
+# Filosofia de Documentação
 
-Good documentation answers questions.
+Boa documentação responde perguntas.
 
-Great documentation prevents questions.
+Ótima documentação previne perguntas.
 
-Always optimize for future understanding.
+Sempre otimize para entendimento futuro.
 
-Imagine an engineer reading this documentation one year from now.
+Imagine um engenheiro lendo esta documentação daqui a um ano.
 
-Will they understand why the decision was made?
+Ele entenderá por que a decisão foi tomada?
 
-If not,
+Se não,
 
-improve the documentation.
+melhore a documentação.
 
 ---
 
 # Definition of Done
 
-A development task is only complete when:
+Uma tarefa de desenvolvimento só está completa quando:
 
-✓ Code is implemented.
+✓ O código está implementado.
 
-✓ Tests have been executed when applicable.
+✓ Os testes foram executados quando aplicável.
 
-✓ Documentation has been updated.
+✓ A documentação foi atualizada.
 
-✓ Knowledge has been extracted.
+✓ O conhecimento foi extraído.
 
-✓ Existing notes have been updated.
+✓ Notas existentes foram atualizadas.
 
-✓ Duplicate documentation has been avoided.
+✓ Documentação duplicada foi evitada.
 
-Only then is the task complete.
-
----
-
-# Engineering Questions
-
-Every document should answer as many of these questions as possible.
-
-What changed?
-
-Why was it necessary?
-
-How does it work?
-
-What assumptions exist?
-
-Which trade-offs were made?
-
-Which alternatives were rejected?
-
-Which risks remain?
-
-How can it be tested?
-
-What should another engineer know?
+Só então a tarefa está completa.
 
 ---
 
-# Explain Why
+# Perguntas de Engenharia
 
-Never stop at describing what happened.
+Todo documento deve responder o máximo possível destas perguntas.
 
-Always explain why.
+O que mudou?
 
-Bad
+Por que foi necessário?
+
+Como funciona?
+
+Quais premissas existem?
+
+Quais trade-offs foram feitos?
+
+Quais alternativas foram rejeitadas?
+
+Quais riscos permanecem?
+
+Como pode ser testado?
+
+O que outro engenheiro deve saber?
+
+---
+
+# Explique o Porquê
+
+Nunca pare em descrever o que aconteceu.
+
+Sempre explique o porquê.
+
+Ruim
 
 "Redis was added."
 
-Good
+Bom
 
 "Redis was introduced to reduce repeated database access for frequently requested reference data. Local in-memory caching was rejected because multiple application instances require shared cache consistency."
 
-Reasoning is more valuable than implementation details.
+O raciocínio é mais valioso do que detalhes de implementação.
 
 ---
 
-# Technical Decisions
+# Decisões Técnicas
 
-Every significant decision should include
+Toda decisão significativa deve incluir
 
-Decision
+Decisão
 
-Motivation
+Motivação
 
-Alternatives
+Alternativas
 
 Trade-offs
 
-Consequences
+Consequências
 
-Future implications
+Implicações futuras
 
-If these cannot be explained,
+Se isto não puder ser explicado,
 
-the decision has not been documented properly.
+a decisão não foi documentada corretamente.
 
 ---
 
-# Avoid Low-Value Documentation
+# Evite Documentação de Baixo Valor
 
-Do not write documentation that merely repeats code.
+Não escreva documentação que apenas repete o código.
 
-Bad
+Ruim
 
 "The UserService contains methods."
 
-Good
+Bom
 
 "The UserService centralizes permission validation to avoid duplicated authorization logic across controllers."
 
-Documentation should explain intent.
+A documentação deve explicar a intenção.
 
-Code already explains syntax.
-
----
-
-# Explain Assumptions
-
-Whenever assumptions exist,
-
-document them.
-
-Examples
-
-Expected database constraints
-
-Expected API behavior
-
-Expected deployment topology
-
-Framework limitations
-
-Performance assumptions
-
-Security assumptions
-
-Hidden assumptions create future bugs.
+O código já explica a sintaxe.
 
 ---
 
-# Unknown Information
+# Explique Premissas
 
-It is acceptable to document uncertainty.
+Sempre que existirem premissas,
 
-Example
+documente-as.
+
+Exemplos
+
+Restrições esperadas do banco de dados
+
+Comportamento esperado da API
+
+Topologia de deploy esperada
+
+Limitações de framework
+
+Premissas de performance
+
+Premissas de segurança
+
+Premissas ocultas criam bugs futuros.
+
+---
+
+# Informação Desconhecida
+
+É aceitável documentar incerteza.
+
+Exemplo
 
 "The deployment strategy could not be determined automatically."
 
-Never invent missing information.
+Nunca invente informação ausente.
 
 ---
 
-# Context Preservation
+# Preservação de Contexto
 
-Future engineers should not require access to:
+Engenheiros futuros não devem precisar de acesso a:
 
-Chat history
+Histórico de chat
 
 Pull Requests
 
-Meetings
+Reuniões
 
 Slack
 
 Email
 
-Everything necessary should already exist inside the knowledge base.
+Tudo o que for necessário já deve existir na base de conhecimento do projeto atual, com links para o Knowledge global quando o contexto de engenharia for reutilizável.
 
 ---
 
-# Conciseness
+# Concisão
 
-Documentation should be concise.
+A documentação deve ser concisa.
 
-Remove repetition.
+Remova repetição.
 
-Remove filler.
+Remova preenchimento.
 
-Remove obvious statements.
+Remova afirmações óbvias.
 
-Keep explanations complete.
+Mantenha as explicações completas.
 
-Avoid unnecessary verbosity.
-
----
-
-# Technical Accuracy
-
-Accuracy is more important than completeness.
-
-Incomplete but correct documentation is better than complete but incorrect documentation.
-
-Never speculate.
+Evite verbosidade desnecessária.
 
 ---
 
-# Knowledge Reuse
+# Precisão Técnica
 
-Before writing:
+Precisão é mais importante que completude.
 
-Search existing documentation.
+Documentação incompleta mas correta é melhor do que documentação completa mas incorreta.
 
-If equivalent knowledge exists:
-
-Update it.
-
-Do not duplicate it.
-
-Knowledge should evolve.
-
-Not multiply.
+Nunca especule.
 
 ---
 
-# Examples
+# Reuso de Conhecimento
 
-Whenever a concept is difficult,
+Antes de escrever:
 
-include an example.
+Busque documentação existente nesta ordem:
 
-Examples dramatically improve comprehension.
+1. ~/obsidian/Projects/<Project>/
 
-Prefer practical examples over theoretical explanations.
+2. ~/obsidian/Knowledge/
 
----
+Nunca busque outras pastas Projects/* por conteúdo para mesclar.
 
-# Audience
+Se conhecimento equivalente existir no escopo correto:
 
-Write for
+Atualize-o.
 
-Engineers
+Não o duplique.
 
-Architects
+O conhecimento deve evoluir.
 
-Future AI Agents
-
-Assume technical readers.
-
-Do not oversimplify.
+Não se multiplicar.
 
 ---
 
-# Language
+# Exemplos
 
-Be objective.
+Sempre que um conceito for difícil,
 
-Avoid marketing language.
+inclua um exemplo.
 
-Avoid opinions.
+Exemplos melhoram drasticamente a compreensão.
 
-Avoid unnecessary adjectives.
-
-Prefer precise technical language.
+Prefira exemplos práticos a explicações teóricas.
 
 ---
 
-# Confidence
+# Audiência
 
-Every inferred statement should include confidence.
+Escreva para
+
+Engenheiros
+
+Arquitetos
+
+Agentes de IA futuros
+
+Assuma leitores técnicos.
+
+Não simplifique demais.
+
+---
+
+# Linguagem
+
+Seja objetivo.
+
+Evite linguagem de marketing.
+
+Evite opiniões.
+
+Evite adjetivos desnecessários.
+
+Prefira linguagem técnica precisa.
+
+A documentação gerada no vault deve ser escrita em Português Brasileiro (PT-BR), exceto nomes de pastas, paths e identificadores técnicos.
+
+---
+
+# Confiança
+
+Toda afirmação inferida deve incluir confiança.
 
 High
 
@@ -291,15 +299,15 @@ Low
 
 Unknown
 
-Never present assumptions as facts.
+Nunca apresente premissas como fatos.
 
 ---
 
-# Documentation Score
+# Score de Documentação
 
-Before saving documentation,
+Antes de salvar a documentação,
 
-evaluate the following categories.
+avalie as seguintes categorias.
 
 Architecture
 
@@ -341,70 +349,76 @@ Completeness
 
 ★★★★★
 
-Categories with low quality should be improved before saving.
+Categorias com baixa qualidade devem ser melhoradas antes de salvar.
 
 ---
 
-# Self Review
+# Auto Revisão
 
-Before finishing,
+Antes de finalizar,
 
-review the documentation.
+revise a documentação.
 
-Ask yourself
+Pergunte a si mesmo
 
-Would another engineer understand this?
+Outro engenheiro entenderia isto?
 
-Would another AI continue the work?
+Outra IA continuaria o trabalho?
 
-Would I understand this in one year?
+Eu entenderia isto daqui a um ano?
 
-If the answer is "No",
+Se a resposta for "Não",
 
-continue improving.
-
----
-
-# Completion Checklist
-
-Repository understood
-
-Task understood
-
-Architecture impact documented
-
-Business impact documented
-
-Technical decisions documented
-
-Risks documented
-
-Validation documented
-
-Knowledge extracted
-
-Existing notes updated
-
-Duplicate notes avoided
-
-Wiki links created
-
-Metadata included
-
-Confidence recorded
-
-Quality reviewed
+continue melhorando.
 
 ---
 
-# Golden Rule
+# Checklist de Conclusão
 
-The objective is not to document everything.
+Repositório entendido
 
-The objective is to preserve understanding.
+Pasta do projeto resolvida ou inicializada
 
-Understanding outlives implementation.
+Tarefa entendida
 
-Code changes.
+Impacto na arquitetura documentado
 
-Knowledge remains.
+Impacto de negócio documentado
+
+Decisões técnicas documentadas
+
+Riscos documentados
+
+Validação documentada
+
+Conhecimento extraído
+
+Documento armazenado no escopo correto
+
+Sem escritas em outras pastas Projects/*
+
+Notas existentes atualizadas
+
+Notas duplicadas evitadas
+
+Wiki links path-qualified criados quando houver ambiguidade
+
+Metadados incluídos
+
+Confiança registrada
+
+Qualidade revisada
+
+---
+
+# Regra de Ouro
+
+O objetivo não é documentar tudo.
+
+O objetivo é preservar entendimento.
+
+O entendimento sobrevive à implementação.
+
+O código muda.
+
+O conhecimento permanece.

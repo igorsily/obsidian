@@ -5,175 +5,331 @@ Version: 1.0.0
 
 ---
 
-# Purpose
+# Propósito
 
-These rules define how project knowledge must be organized.
+Estas regras definem como o conhecimento do projeto deve ser organizado.
 
-The objective is to create a predictable knowledge base that remains useful over months or years of development.
+O objetivo é criar uma base de conhecimento previsível, útil ao longo de meses ou anos de desenvolvimento.
 
-Every AI agent must follow the same organization.
+Todo agente de IA deve seguir a mesma organização.
 
-Consistency is more important than personal preference.
+Consistência é mais importante do que preferência pessoal.
 
 ---
 
-# Default Vault
+# Vault Padrão
 
-The default Obsidian Vault is:
+O Vault Obsidian padrão é:
 
 ~/obsidian
 
-Never ask the user where the Vault is located unless writing fails.
+Nunca pergunte ao usuário onde o Vault está localizado, a menos que a escrita falhe.
 
-If the Vault does not exist:
+Se o Vault não existir:
 
-- create it
-- initialize the directory structure
-- continue normally
+- crie
+- inicialize a estrutura de diretórios do vault
+- continue normalmente
+
+Estrutura da raiz do vault:
+
+```
+~/obsidian/
+
+    Projects/
+
+    Knowledge/
+
+    Templates/
+
+    Inbox/
+```
+
+Nunca peça ao usuário para escolher onde a documentação é armazenada.
 
 ---
 
-# Project Discovery
+# Descoberta de Projeto
 
-Every repository must map to exactly one project folder.
+Cada repositório deve mapear para exatamente uma pasta de projeto.
 
-Example
+Exemplo
 
-Repository
+Repositório
 
 awesome-api
 
-becomes
+torna-se
 
 ~/obsidian/Projects/awesome-api/
 
-Never create multiple project folders for the same repository.
+Nunca crie múltiplas pastas de projeto para o mesmo repositório.
+
+Se a pasta do projeto não existir:
+
+- copie a estrutura de `project-template/` neste repositório da skill
+- coloque em `~/obsidian/Projects/<Project>/`
+- continue normalmente
+
+Nunca peça confirmação antes de inicializar um projeto.
 
 ---
 
-# Directory Structure
+# Estrutura de Diretórios do Vault
 
-Each project must follow this structure.
+O Vault Obsidian deve seguir esta estrutura.
 
-Projects/
+```
+~/obsidian/
 
-    <Project>/
+    Projects/
 
-        README.md
+        <Project>/
 
-        INDEX.md
+            INDEX.md
 
-        Handoffs/
+            README.md
 
-        Architecture/
+            Architecture.md
 
-        ADR/
+            ADR/
 
-        Business/
+            Handoffs/
 
-        Decisions/
+            Releases/
 
-        Features/
+            Knowledge/
 
-        Bugs/
+                Business/
 
-        Releases/
+                Features/
 
-        Infrastructure/
+                Bugs/
 
-        Frameworks/
+                Infrastructure/
 
-        Integrations/
+                Integrations/
 
-        Troubleshooting/
+                Troubleshooting/
 
-        Attachments/
+                Frameworks/
 
-Never rename these folders.
+    Knowledge/
 
-Never localize folder names.
+        Java/
 
-Always use English.
+        Spring/
+
+        Angular/
+
+        Docker/
+
+        PostgreSQL/
+
+        Redis/
+
+        Linux/
+
+        Git/
+
+        AI/
+
+    Templates/
+
+    Inbox/
+```
+
+Nunca renomeie estas pastas.
+
+Nunca localize nomes de pastas.
+
+Sempre use inglês nos nomes de pastas.
+
+---
+
+# Isolamento de Projetos
+
+Cada projeto possui sua própria documentação.
+
+Conhecimento de repositórios diferentes nunca deve ser misturado.
+
+Nunca escreva notas específicas de um projeto na pasta de outro projeto.
+
+Nunca armazene conhecimento específico de projeto na pasta global `Knowledge/`.
+
+---
+
+# Knowledge Global
+
+Conhecimento de engenharia reutilizável pertence a:
+
+~/obsidian/Knowledge/
+
+Exemplos
+
+Docker
+
+Spring
+
+Redis
+
+Linux
+
+DDD
+
+PostgreSQL
+
+Git
+
+Java
+
+Angular
+
+AI
+
+O conhecimento global é compartilhado entre todos os projetos.
+
+---
+
+# Knowledge do Projeto
+
+Conhecimento específico do projeto sempre pertence a:
+
+~/obsidian/Projects/<Project>/
+
+Exemplos
+
+Business Rules
+
+Architecture
+
+Features
+
+Infrastructure
+
+Integrations
+
+Troubleshooting
+
+Bugs
+
+ADRs
+
+Releases
+
+Handoffs
+
+Peculiaridades de framework descobertas no repositório
+
+---
+
+# Bootstrap de Projeto
+
+Quando um novo projeto é detectado e `~/obsidian/Projects/<Project>/` não existe:
+
+1. Garanta que a raiz do vault exista com `Projects/`, `Knowledge/`, `Templates/` e `Inbox/`
+2. Replique `project-template/` em `~/obsidian/Projects/<Project>/`
+3. Continue a documentação normalmente
+
+A fonte da verdade do bootstrap é:
+
+project-template/
+
+dentro do repositório da skill Engineering Memory.
 
 ---
 
 # README
 
-Every project must contain a README.
+Todo projeto deve conter um README.
 
-The README represents the current state of the project.
+O README representa o estado atual do projeto.
 
-It should be updated over time.
+Deve ser atualizado ao longo do tempo.
 
-It should never become a historical log.
+Nunca deve se tornar um log histórico.
 
-Instead it should answer:
+Em vez disso, deve responder:
 
-What is this project?
+O que é este projeto?
 
-Which technologies are used?
+Quais tecnologias são usadas?
 
-How is it organized?
+Como está organizado?
 
-How can it be executed?
+Como pode ser executado?
 
-Which external systems exist?
+Quais sistemas externos existem?
 
-What should a new engineer know?
+O que um novo engenheiro deve saber?
 
 ---
 
 # INDEX
 
-Every project contains an INDEX.
+Todo projeto contém um INDEX.
 
-The INDEX is the navigation entry point.
+O INDEX é o ponto de entrada de navegação.
 
-It links:
+Ele vincula:
 
-Recent handoffs
+Handoffs recentes
 
 Architecture
 
 ADR
 
-Business
+Knowledge/Business
 
-Features
+Knowledge/Features
+
+Knowledge/Infrastructure
+
+Knowledge/Integrations
+
+Knowledge/Troubleshooting
+
+Knowledge/Frameworks
+
+Knowledge/Bugs
 
 Releases
 
-Troubleshooting
-
-Infrastructure
-
-Frameworks
-
-The INDEX should always reflect the current documentation.
+O INDEX deve sempre refletir a documentação atual.
 
 ---
 
 # Handoffs
 
-Handoffs describe completed work.
+Handoffs descrevem trabalho concluído.
 
-Each handoff represents one logical implementation.
+Cada handoff representa uma implementação lógica.
 
-Use filenames like
+Use nomes de arquivo como
 
 YYYY-MM-DD HH-mm - Task Name.md
 
-Never overwrite a handoff.
+Nunca sobrescreva um handoff.
 
-Handoffs are immutable historical records.
+Handoffs são registros históricos imutáveis.
+
+Armazene em:
+
+Projects/<Project>/Handoffs/
 
 ---
 
 # Architecture
 
-Architecture notes describe long-term technical concepts.
+Notas de arquitetura descrevem conceitos técnicos de longo prazo.
 
-Examples
+A visão geral da arquitetura do projeto fica em:
+
+Projects/<Project>/Architecture.md
+
+Notas adicionais de arquitetura podem ficar ao lado ou ser vinculadas a partir dela.
+
+Exemplos
 
 Authentication
 
@@ -189,19 +345,19 @@ Microservices
 
 Domain Model
 
-Architecture notes evolve over time.
+Notas de arquitetura evoluem ao longo do tempo.
 
-Update them.
+Atualize-as.
 
-Do not create duplicates.
+Não crie duplicatas.
 
 ---
 
 # ADR
 
-Architecture Decision Records document important technical decisions.
+Architecture Decision Records documentam decisões técnicas importantes.
 
-Create an ADR whenever a decision changes:
+Crie um ADR sempre que uma decisão alterar:
 
 Architecture
 
@@ -221,15 +377,19 @@ Caching
 
 Storage
 
-One ADR per decision.
+Um ADR por decisão.
+
+Armazene em:
+
+Projects/<Project>/ADR/
 
 ---
 
 # Business Rules
 
-Business Rules describe domain knowledge.
+Business Rules descrevem conhecimento de domínio.
 
-Examples
+Exemplos
 
 Owner can have only one active property.
 
@@ -237,109 +397,119 @@ Invoices cannot be cancelled after payment.
 
 Users cannot delete themselves.
 
-Business Rules must avoid implementation details.
+Business Rules devem evitar detalhes de implementação.
 
-Describe the domain.
+Descreva o domínio.
+
+Armazene em:
+
+Projects/<Project>/Knowledge/Business/
 
 ---
 
 # Features
 
-Each completed feature may receive its own documentation.
+Cada feature concluída pode receber sua própria documentação.
 
-Describe:
+Descreva:
 
-Purpose
+Propósito
 
-Behavior
+Comportamento
 
-Dependencies
+Dependências
 
-Limitations
+Limitações
 
-Future improvements
+Melhorias futuras
+
+Armazene em:
+
+Projects/<Project>/Knowledge/Features/
 
 ---
 
 # Bugs
 
-Document recurring bugs.
+Documente bugs recorrentes.
 
-Include
+Inclua
 
-Symptoms
+Sintomas
 
-Cause
+Causa
 
-Solution
+Solução
 
 Workaround
 
 Status
 
-Never document temporary failures.
+Nunca documente falhas temporárias.
 
-Only recurring knowledge.
+Apenas conhecimento recorrente.
+
+Armazene em:
+
+Projects/<Project>/Knowledge/Bugs/
 
 ---
 
 # Infrastructure
 
-Infrastructure notes describe:
+Notas de infraestrutura descrevem infraestrutura específica do projeto.
 
-Docker
+Exemplos
 
-Kubernetes
+Docker setup for this project
 
-Redis
+Kubernetes manifests used here
 
-RabbitMQ
+Redis usage in this system
 
-Kafka
+Deployment topology
 
-Cloud
+Secrets layout
 
-Networking
+Armazene em:
 
-Reverse Proxy
+Projects/<Project>/Knowledge/Infrastructure/
 
-Secrets
+Conhecimento de infraestrutura reutilizável entre projetos pertence a:
 
-Deployment
+~/obsidian/Knowledge/
 
 ---
 
 # Frameworks
 
-Framework notes document:
+Notas de framework sob o projeto documentam apenas conhecimento específico do projeto.
 
-Spring Boot
+Exemplos
 
-Angular
+Spring Boot conventions used in this repository
 
-React
+Angular architecture choices in this codebase
 
-Next.js
+Hibernate quirks discovered here
 
-Hibernate
+Armazene em:
 
-JPA
+Projects/<Project>/Knowledge/Frameworks/
 
-MapLibre
+Conhecimento geral de framework pertence a:
 
-etc.
+~/obsidian/Knowledge/
 
-Document only project-specific knowledge.
-
-Avoid copying official documentation.
+Evite copiar documentação oficial.
 
 ---
 
 # Integrations
 
-Document external systems.
+Documente sistemas externos usados pelo projeto.
 
-Examples
+Exemplos
 
 Stripe
 
@@ -357,51 +527,75 @@ OAuth
 
 REST APIs
 
+Armazene em:
+
+Projects/<Project>/Knowledge/Integrations/
+
 ---
 
 # Troubleshooting
 
-Document recurring operational problems.
+Documente problemas operacionais recorrentes deste projeto.
 
-Include
+Inclua
 
-Problem
+Problema
 
-Diagnosis
+Diagnóstico
 
-Root Cause
+Causa Raiz
 
-Resolution
+Resolução
 
-Prevention
+Prevenção
 
----
+Armazene em:
 
-# Attachments
-
-Store supporting assets.
-
-Examples
-
-Images
-
-Diagrams
-
-Architecture drawings
-
-Flowcharts
-
-SQL files
-
-Never store generated binaries.
+Projects/<Project>/Knowledge/Troubleshooting/
 
 ---
 
-# Naming
+# Releases
 
-Prefer concise names.
+Notas de release pertencem a:
 
-Good
+Projects/<Project>/Releases/
+
+---
+
+# Inbox
+
+Rascunhos temporários e notas inacabadas pertencem a:
+
+~/obsidian/Inbox/
+
+Nunca trate o conteúdo do Inbox como memória permanente do projeto.
+
+Promova conhecimento durável para a pasta correta do projeto ou global.
+
+---
+
+# Templates
+
+Templates do vault ficam em:
+
+~/obsidian/Templates/
+
+Templates da skill ficam em:
+
+templates/
+
+dentro do repositório da skill Engineering Memory.
+
+Prefira templates da skill ao gerar documentação.
+
+---
+
+# Nomenclatura
+
+Prefira nomes concisos.
+
+Bom
 
 Authentication
 
@@ -411,70 +605,80 @@ Payments
 
 Owners
 
-Bad
+Ruim
 
 Authentication Documentation Final Version
 
 ---
 
-# Dates
+# Datas
 
-Always use ISO dates.
+Sempre use datas ISO.
 
-Example
+Exemplo
 
 2026-07-09
 
-Never use locale-specific formats.
+Nunca use formatos específicos de locale.
 
 ---
 
 # Links
 
-Always create wiki links.
+Sempre crie wiki links.
 
-Example
+Prefira links path-qualified para preservar o isolamento de projetos.
 
-[[Authentication]]
+Exemplo
 
-[[Redis]]
+[[Architecture]]
 
-[[Docker]]
+[[Knowledge/Business/Owner Validation]]
 
-[[ADR-001 Authentication]]
+[[Knowledge/Infrastructure/Redis]]
 
-Knowledge should become a connected graph.
+[[ADR/ADR-001 Authentication]]
 
----
+Para conhecimento global de engenharia:
 
-# Ownership
+[[Knowledge/Docker/Compose Patterns]]
 
-Knowledge belongs to the project.
+Siga LINKING_RULES.md para as regras de isolamento.
 
-Never reference individual conversations.
-
-Never reference temporary chat context.
-
-Documentation should survive the disappearance of any AI session.
+O conhecimento deve se tornar um grafo conectado.
 
 ---
 
-# Updating
+# Propriedade
 
-When information changes:
+Conhecimento específico do projeto pertence ao projeto.
 
-Update the existing note.
+Conhecimento de engenharia reutilizável pertence à pasta global Knowledge.
 
-Do not create another note.
+Nunca referencie conversas individuais.
 
-Historical evolution belongs inside Git.
+Nunca referencie contexto temporário de chat.
 
-Not inside duplicated notes.
+A documentação deve sobreviver ao desaparecimento de qualquer sessão de IA.
 
 ---
 
-# Principle
+# Atualização
 
-A project should become easier to understand after every completed task.
+Quando a informação mudar:
 
-Never leave the documentation worse than it was before.
+Atualize a nota existente.
+
+Não crie outra nota.
+
+A evolução histórica pertence ao Git.
+
+Não a notas duplicadas.
+
+---
+
+# Princípio
+
+Um projeto deve ficar mais fácil de entender após cada tarefa concluída.
+
+Nunca deixe a documentação pior do que estava antes.

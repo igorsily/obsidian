@@ -5,101 +5,167 @@ Version: 1.0.0
 
 ---
 
-# Purpose
+# Propósito
 
-Engineering knowledge should never exist in isolation.
+Conhecimento de engenharia nunca deve existir isolado.
 
-Every note is part of a larger knowledge graph.
+Toda nota faz parte de um grafo de conhecimento maior.
 
-Documentation becomes exponentially more valuable when related concepts are connected.
+A documentação se torna exponencialmente mais valiosa quando conceitos relacionados estão conectados.
 
-The objective is to create a navigable engineering knowledge base rather than a collection of disconnected documents.
+O objetivo é criar uma base de conhecimento de engenharia navegável, e não uma coleção de documentos desconectados.
 
 ---
 
-# Philosophy
+# Filosofia
 
-Think in relationships.
+Pense em relacionamentos.
 
-Do not ask:
+Não pergunte:
 
-"What note am I writing?"
+"Qual nota estou escrevendo?"
 
-Instead ask:
+Em vez disso, pergunte:
 
-"What knowledge already exists that relates to this?"
+"Qual conhecimento já existe que se relaciona a isto?"
 
-Every note should help engineers discover other relevant knowledge.
+Toda nota deve ajudar engenheiros a descobrir outro conhecimento relevante.
 
 ---
 
 # Wiki Links
 
-Always prefer Obsidian Wiki Links.
+Sempre prefira Wiki Links do Obsidian.
 
-Correct
+Prefira links path-qualified que permaneçam dentro do projeto atual ou apontem explicitamente para o Knowledge global.
 
-[[Authentication]]
+Correto
+
+[[Architecture]]
+
+[[Knowledge/Infrastructure/Redis]]
+
+[[Knowledge/Business/Owner Validation]]
+
+[[ADR/ADR-003 Redis]]
+
+[[Knowledge/Docker/Compose Patterns]]
+
+Evite links nus quando houver ambiguidade.
+
+Incorreto como padrão
 
 [[Redis]]
 
-[[Spring Boot]]
+[[Authentication]]
 
-[[Payments]]
+Evite links Markdown para documentação interna sempre que possível.
 
-Avoid Markdown links for internal documentation whenever possible.
-
-Wiki Links are the default.
+Wiki Links são o padrão.
 
 ---
 
-# Bidirectional Thinking
+# Isolamento de Projetos
 
-Whenever creating a note ask:
+Wiki links internos devem permanecer dentro do projeto atual.
 
-Which existing notes should point here?
+Evite links que possam referenciar acidentalmente a documentação de outro projeto.
 
-Which notes should this note reference?
+Busque e vincule apenas dentro de:
 
-Knowledge should be discoverable from multiple entry points.
+~/obsidian/Projects/<Project>/
+
+e, quando relevante,
+
+~/obsidian/Knowledge/
+
+Nunca crie links que dependam de uma nota de outro Projects/* como destino primário.
 
 ---
 
-# Link Existing Knowledge
+# Links para Knowledge Global
 
-Before saving a document:
+Conhecimento de engenharia reutilizável fica na raiz do vault:
 
-Search for related documentation.
+~/obsidian/Knowledge/<Area>/
 
-Examples
+Vincule com um path explícito sob o Knowledge global.
+
+Exemplo
+
+[[Knowledge/Spring/Transaction Boundaries]]
+
+[[Knowledge/PostgreSQL/Indexing Patterns]]
+
+[[Knowledge/Git/Rebase Workflow]]
+
+Não confunda Knowledge global com:
+
+Projects/<Project>/Knowledge/
+
+Quando ambos os escopos puderem corresponder, use o path completo do vault que identifica a nota de forma única.
+
+Exemplo
+
+[[Projects/awesome-api/Knowledge/Infrastructure/Redis]]
+
+[[Knowledge/Redis/Persistence]]
+
+---
+
+# Pensamento Bidirecional
+
+Sempre que criar uma nota, pergunte:
+
+Quais notas existentes devem apontar para cá?
+
+Quais notas esta nota deve referenciar?
+
+O conhecimento deve ser descoberta a partir de múltiplos pontos de entrada.
+
+---
+
+# Vincule Conhecimento Existente
+
+Antes de salvar um documento:
+
+Busque documentação relacionada nesta ordem:
+
+1. Pasta do projeto atual
+
+2. Pasta Knowledge global
+
+Nunca busque outras pastas Projects/* por links relacionados para mesclar entre projetos.
+
+Exemplos
 
 Architecture
 
 ADR
 
-Business Rules
+Knowledge/Business
 
-Features
+Knowledge/Features
 
-Infrastructure
+Knowledge/Infrastructure
 
-Troubleshooting
+Knowledge/Troubleshooting
 
-Frameworks
+Knowledge/Frameworks
 
-Integrations
+Knowledge/Integrations
 
-Recent Handoffs
+Handoffs recentes
 
-Create links whenever relationships exist.
+Crie links sempre que existirem relacionamentos.
 
 ---
 
-# Link Types
+# Tipos de Link
 
-Every note may contain relationships.
+Toda nota pode conter relacionamentos.
 
-Examples
+Exemplos
 
 Related Features
 
@@ -123,9 +189,9 @@ Related Handoffs
 
 ---
 
-# Handoff Links
+# Links de Handoff
 
-Every handoff should reference:
+Todo handoff deve referenciar:
 
 Architecture
 
@@ -133,33 +199,35 @@ Business Rules
 
 ADR
 
-Affected Features
+Features afetadas
 
 Troubleshooting
 
 Infrastructure
 
-Framework Notes
+Notas de Framework
 
-Related Handoffs
+Handoffs relacionados
 
-Example
+Exemplo
 
 ## Related Knowledge
 
-[[Authentication]]
+[[Architecture]]
 
-[[ADR-003 Authentication]]
+[[Knowledge/Business/Authentication Policy]]
 
-[[JWT]]
+[[ADR/ADR-003 Authentication]]
 
-[[Security]]
+[[Knowledge/Infrastructure/JWT]]
+
+[[Knowledge/Frameworks/Spring Security]]
 
 ---
 
-# Architecture Links
+# Links de Architecture
 
-Architecture notes should reference
+Notas de arquitetura devem referenciar
 
 Business Rules
 
@@ -177,13 +245,13 @@ API
 
 Deployment
 
-Never leave architecture isolated.
+Nunca deixe a arquitetura isolada.
 
 ---
 
 # Business Rules
 
-Business Rules should connect to
+Business Rules devem conectar a
 
 Features
 
@@ -197,33 +265,33 @@ Troubleshooting
 
 ADR
 
-Never document business rules without showing where they apply.
+Nunca documente regras de negócio sem mostrar onde se aplicam.
 
 ---
 
-# ADR Links
+# Links de ADR
 
-Each ADR should reference
+Cada ADR deve referenciar
 
-Previous ADR
+ADR anterior
 
-Affected Architecture
+Architecture afetada
 
-Related Infrastructure
+Infrastructure relacionada
 
 Business Rules
 
-Implementation Handoff
+Handoff de implementação
 
-Future ADR
+ADR futuro
 
-Architecture becomes easier to navigate when decisions are connected.
+A arquitetura fica mais fácil de navegar quando as decisões estão conectadas.
 
 ---
 
-# Framework Notes
+# Notas de Framework
 
-Framework notes should reference
+Notas de framework devem referenciar
 
 Architecture
 
@@ -235,13 +303,13 @@ Performance
 
 Integrations
 
-Avoid isolated framework documentation.
+Evite documentação de framework isolada.
 
 ---
 
 # Infrastructure
 
-Infrastructure should reference
+Infraestrutura deve referenciar
 
 Deployment
 
@@ -263,11 +331,11 @@ Architecture
 
 # Troubleshooting
 
-Troubleshooting should reference
+Troubleshooting deve referenciar
 
-Affected Framework
+Framework afetado
 
-Affected Feature
+Feature afetada
 
 Architecture
 
@@ -275,15 +343,15 @@ Infrastructure
 
 Business Rule
 
-Known Bug
+Bug conhecido
 
-Never document a problem without linking to the affected components.
+Nunca documente um problema sem vincular aos componentes afetados.
 
 ---
 
 # Features
 
-Features should reference
+Features devem referenciar
 
 Business Rules
 
@@ -293,19 +361,19 @@ Infrastructure
 
 ADR
 
-Related Features
+Features relacionadas
 
 Integrations
 
 Troubleshooting
 
-Recent Handoffs
+Handoffs recentes
 
 ---
 
 # Bugs
 
-Bug documentation should reference
+Documentação de bugs deve referenciar
 
 Feature
 
@@ -315,17 +383,17 @@ Business Rule
 
 Troubleshooting
 
-Root Cause
+Causa Raiz
 
-Related ADR
+ADR relacionado
 
-Never document bugs without context.
+Nunca documente bugs sem contexto.
 
 ---
 
 # README
 
-The project README should always link to
+O README do projeto deve sempre vincular a
 
 INDEX
 
@@ -333,137 +401,153 @@ Architecture
 
 ADR
 
-Business
+Knowledge/Business
 
-Infrastructure
+Knowledge/Infrastructure
 
-Frameworks
+Knowledge/Frameworks
 
-Latest Handoffs
+Knowledge/Integrations
 
-Troubleshooting
+Knowledge/Features
 
-README is the project's homepage.
+Knowledge/Troubleshooting
+
+Handoffs mais recentes
+
+O README é a homepage do projeto.
 
 ---
 
 # INDEX
 
-INDEX is the project's navigation hub.
+INDEX é o hub de navegação do projeto.
 
-It should link to
+Deve vincular a
 
-Recent Handoffs
+Handoffs recentes
 
 Architecture
 
 ADR
 
-Business Rules
+Knowledge/Business
 
-Features
+Knowledge/Features
 
-Infrastructure
+Knowledge/Infrastructure
 
-Frameworks
+Knowledge/Frameworks
+
+Knowledge/Integrations
+
+Knowledge/Troubleshooting
+
+Knowledge/Bugs
 
 Releases
 
-Troubleshooting
-
-Integrations
-
 README
 
-INDEX should never become outdated.
+O INDEX também pode vincular a notas relevantes do Knowledge global quando útil.
+
+O INDEX nunca deve ficar desatualizado.
 
 ---
 
-# Link Density
+# Densidade de Links
 
-Too few links reduce discoverability.
+Poucos links demais reduzem a descoberta.
 
-Too many links reduce readability.
+Muitos links demais reduzem a legibilidade.
 
-Prefer meaningful links.
+Prefira links significativos.
 
-Avoid linking every technical term.
-
----
-
-# Duplicate Links
-
-Do not repeat identical links multiple times in the same section.
-
-One meaningful reference is enough.
+Evite vincular todo termo técnico.
 
 ---
 
-# Link Confidence
+# Links Duplicados
 
-Only create links when a meaningful relationship exists.
+Não repita links idênticos várias vezes na mesma seção.
 
-Never force connections.
-
-Quality is more important than quantity.
+Uma referência significativa é suficiente.
 
 ---
 
-# Broken Links
+# Confiança do Link
 
-If a note does not exist yet
+Só crie links quando existir um relacionamento significativo.
 
-Create the wiki link anyway.
+Nunca force conexões.
 
-Example
-
-[[Caching]]
-
-The note may be created later.
-
-Broken wiki links are acceptable.
+Qualidade é mais importante que quantidade.
 
 ---
 
-# Link Naming
+# Links Quebrados
 
-Use concise names.
+Se uma nota ainda não existir
 
-Good
+Crie o wiki link mesmo assim.
 
-[[Payments]]
+Prefira um link path-qualified para que a nota futura caia no escopo correto.
 
-[[Docker]]
+Exemplo
 
-[[Redis]]
+[[Knowledge/Infrastructure/Caching]]
 
-[[Authentication]]
+[[Architecture]]
 
-Bad
+Links quebrados nus são aceitáveis apenas quando o nome for único dentro do escopo de busca permitido.
+
+Wiki links quebrados são aceitáveis.
+
+---
+
+# Nomenclatura de Links
+
+Use nomes concisos com path suficiente para evitar colisões entre projetos.
+
+Bom
+
+[[Knowledge/Business/Payments]]
+
+[[Knowledge/Infrastructure/Docker]]
+
+[[Knowledge/Infrastructure/Redis]]
+
+[[Architecture]]
+
+Ruim
 
 [[Complete Authentication Documentation]]
 
 [[Docker Setup Documentation]]
 
+[[Redis]]
+
+quando múltiplos projetos podem ter uma nota Redis
+
 ---
 
-# Navigation Sections
+# Seções de Navegação
 
-Whenever appropriate, end notes with
+Sempre que apropriado, termine notas com
 
 ---
 
 ## Related Notes
 
-[[Authentication]]
+[[Architecture]]
 
-[[Redis]]
+[[Knowledge/Infrastructure/Redis]]
 
-[[Spring Boot]]
+[[Knowledge/Frameworks/Spring Boot]]
 
-[[ADR-002 Cache Strategy]]
+[[ADR/ADR-002 Cache Strategy]]
 
-[[Docker]]
+[[Knowledge/Docker/Compose Patterns]]
 
 ---
 
@@ -477,38 +561,46 @@ Whenever appropriate, end notes with
 
 ## Related Business Rules
 
-[[Password Policy]]
+[[Knowledge/Business/Password Policy]]
 
-[[User Lifecycle]]
+[[Knowledge/Business/User Lifecycle]]
 
 ---
 
 ## Related Architecture
 
-[[Authentication]]
+[[Architecture]]
 
-[[Caching]]
-
----
-
-This section greatly improves discoverability.
+[[Knowledge/Infrastructure/Caching]]
 
 ---
 
-# Knowledge Graph
-
-The objective is not merely documentation.
-
-The objective is to build an engineering knowledge graph.
-
-Every completed task should increase the connectivity of the graph.
-
-The graph should become easier to navigate over time.
+Esta seção melhora muito a descoberta.
 
 ---
 
-# Golden Rule
+# Grafo de Conhecimento
 
-Never create isolated knowledge.
+O objetivo não é apenas documentação.
 
-Every important concept should connect to the broader understanding of the project.
+O objetivo é construir um grafo de conhecimento de engenharia.
+
+Há dois grafos conectados:
+
+Grafo do projeto sob Projects/<Project>/
+
+Grafo global sob Knowledge/
+
+Toda tarefa concluída deve aumentar a conectividade do grafo relevante.
+
+Nunca conecte projetos entre si por links nus acidentais.
+
+O grafo deve ficar mais fácil de navegar com o tempo.
+
+---
+
+# Regra de Ouro
+
+Nunca crie conhecimento isolado.
+
+Todo conceito importante deve se conectar ao entendimento mais amplo do projeto ou ao conhecimento global de engenharia quando for reutilizável.

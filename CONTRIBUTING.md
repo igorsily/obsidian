@@ -1,51 +1,55 @@
-# Contributing
+# Contribuindo
 
-Thank you for your interest in contributing.
+Obrigado pelo interesse em contribuir.
 
-## Goals
+## Objetivos
 
-Engineering Memory aims to become the standard way AI agents preserve software engineering knowledge.
+O Engineering Memory busca se tornar a forma padrão de agentes de IA preservarem conhecimento de engenharia de software.
 
-Contributions are welcome.
+Contribuições são bem-vindas.
 
 ---
 
-## Principles
+## Princípios
 
-Documentation first.
+Documentação primeiro.
 
-Never reduce quality.
+Nunca reduzir qualidade.
 
-Avoid duplication.
+Evitar duplicação.
 
-Prefer updates over new notes.
+Preferir atualizar notas existentes a criar novas.
 
-Never invent technical information.
+Nunca inventar informação técnica.
 
-Explain reasoning.
+Explicar o raciocínio.
 
-Capture architectural decisions.
+Capturar decisões arquiteturais.
 
-Keep templates generic.
+Manter templates genéricos.
 
-Remain AI agnostic.
+Permanecer agnóstico de agente de IA.
+
+Escrever documentação e instruções em Português Brasileiro.
+
+Manter nomes de pastas e paths do vault em inglês.
 
 ---
 
 ## Pull Requests
 
-Small pull requests are preferred.
+Prefira pull requests pequenos.
 
-Every feature must include documentation.
+Toda feature deve incluir documentação.
 
-Templates should remain provider independent.
+Templates devem permanecer independentes de provedor.
 
 ---
 
-## Code of Conduct
+## Código de Conduta
 
-Be respectful.
+Seja respeitoso.
 
-Prefer constructive feedback.
+Prefira feedback construtivo.
 
-Help improve engineering documentation.
+Ajude a melhorar a documentação de engenharia.

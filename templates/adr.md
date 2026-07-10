@@ -26,7 +26,7 @@ tags:
 
 # Status
 
-Possible values
+Valores possíveis
 
 - Proposed
 - Accepted
@@ -35,225 +35,225 @@ Possible values
 
 ---
 
-# Context
+# Contexto
 
-Describe the problem.
+Descreva o problema.
 
-Explain the situation that required a decision.
+Explique a situação que exigiu uma decisão.
 
-What constraints existed?
+Quais restrições existiam?
 
-Which requirements influenced the decision?
+Quais requisitos influenciaram a decisão?
 
-What assumptions were made?
+Quais premissas foram assumidas?
 
-What was happening before this decision?
-
----
-
-# Problem Statement
-
-Clearly define the problem.
-
-Avoid implementation details.
-
-Describe the engineering problem.
+O que acontecia antes desta decisão?
 
 ---
 
-# Decision
+# Declaração do Problema
 
-Describe the chosen solution.
+Defina o problema com clareza.
 
-Be objective.
+Evite detalhes de implementação.
 
-Explain exactly what was decided.
+Descreva o problema de engenharia.
 
 ---
 
-# Motivation
+# Decisão
 
-Why was this decision made?
+Descreva a solução escolhida.
 
-Examples
+Seja objetivo.
+
+Explique exatamente o que foi decidido.
+
+---
+
+# Motivação
+
+Por que esta decisão foi tomada?
+
+Exemplos
 
 Performance
 
-Maintainability
+Manutenibilidade
 
-Scalability
+Escalabilidade
 
-Developer Experience
+Experiência do Desenvolvedor
 
-Security
+Segurança
 
-Cost
+Custo
 
-Reliability
+Confiabilidade
 
-Business Constraints
+Restrições de Negócio
 
 ---
 
-# Alternatives Considered
+# Alternativas Consideradas
 
-List every relevant alternative.
+Liste cada alternativa relevante.
 
-For each one explain
+Para cada uma explique
 
-Description
+Descrição
 
-Advantages
+Vantagens
 
-Disadvantages
+Desvantagens
 
-Reason for rejection
+Motivo da rejeição
 
-Example
+Exemplo
 
 ## Local Cache
 
-Advantages
+Vantagens
 
-Fast
+Rápido
 
-Simple
+Simples
 
-Disadvantages
+Desvantagens
 
-No synchronization
+Sem sincronização
 
-Reason Rejected
+Motivo da Rejeição
 
-Multiple application instances require shared cache.
+Múltiplas instâncias da aplicação exigem cache compartilhado.
 
 ---
 
 ## Redis
 
-Advantages
+Vantagens
 
-Shared cache
+Cache compartilhado
 
-Persistent
+Persistente
 
-Scalable
+Escalável
 
-Chosen
+Escolhido
 
 ---
 
 # Trade-offs
 
-Every decision has costs.
+Toda decisão tem custos.
 
-Explain them.
+Explique-os.
 
-Examples
+Exemplos
 
-Higher complexity
+Maior complexidade
 
-Additional infrastructure
+Infraestrutura adicional
 
-Migration effort
+Esforço de migração
 
 Vendor lock-in
 
-Learning curve
+Curva de aprendizado
 
-Operational overhead
+Overhead operacional
 
-Future maintenance
+Manutenção futura
 
 ---
 
-# Consequences
+# Consequências
 
-Describe what changes because of this decision.
+Descreva o que muda por causa desta decisão.
 
-Examples
+Exemplos
 
-Infrastructure
+Infraestrutura
 
-Architecture
+Arquitetura
 
-Deployment
+Deploy
 
-Security
+Segurança
 
-Testing
+Testes
 
 Performance
 
-Developer workflow
+Fluxo de trabalho do desenvolvedor
 
-Monitoring
-
----
-
-# Risks
-
-Describe known risks.
-
-Examples
-
-Single point of failure
-
-Operational complexity
-
-Migration cost
-
-Dependency on external service
-
-Performance uncertainty
+Monitoramento
 
 ---
 
-# Implementation Notes
+# Riscos
 
-If implementation details are relevant
+Descreva riscos conhecidos.
 
-summarize them.
+Exemplos
 
-Do not duplicate implementation documentation.
+Ponto único de falha
 
-Reference the related Handoff instead.
+Complexidade operacional
+
+Custo de migração
+
+Dependência de serviço externo
+
+Incerteza de performance
 
 ---
 
-# Validation
+# Notas de Implementação
 
-How can this decision be validated?
+Se detalhes de implementação forem relevantes
 
-Examples
+resuma-os.
+
+Não duplique documentação de implementação.
+
+Referencie o Handoff relacionado.
+
+---
+
+# Validação
+
+Como esta decisão pode ser validada?
+
+Exemplos
 
 Benchmarks
 
-Stress testing
+Testes de stress
 
-Monitoring
+Monitoramento
 
-Metrics
+Métricas
 
-Functional testing
+Testes funcionais
 
-Operational testing
-
----
-
-# Rollback Strategy
-
-If the decision proves incorrect
-
-how can it be reverted?
-
-Document the rollback plan.
+Testes operacionais
 
 ---
 
-# Related Architecture
+# Estratégia de Rollback
 
-Examples
+Se a decisão se mostrar incorreta
+
+como pode ser revertida?
+
+Documente o plano de rollback.
+
+---
+
+# Arquitetura Relacionada
+
+Exemplos
 
 [[Caching]]
 
@@ -265,9 +265,9 @@ Examples
 
 ---
 
-# Related Handoffs
+# Handoffs Relacionados
 
-Examples
+Exemplos
 
 [[2026-07-09 Introduce Redis Cache]]
 
@@ -275,9 +275,9 @@ Examples
 
 ---
 
-# Related Business Rules
+# Regras de Negócio Relacionadas
 
-Examples
+Exemplos
 
 [[Session Lifetime]]
 
@@ -285,9 +285,9 @@ Examples
 
 ---
 
-# Related Infrastructure
+# Infraestrutura Relacionada
 
-Examples
+Exemplos
 
 [[Redis]]
 
@@ -297,21 +297,21 @@ Examples
 
 ---
 
-# Future Review
+# Revisão Futura
 
-Under which conditions should this ADR be reviewed?
+Sob quais condições este ADR deve ser revisado?
 
-Examples
+Exemplos
 
-Traffic increase
+Aumento de tráfego
 
-Migration
+Migração
 
-Framework upgrade
+Upgrade de framework
 
-Architecture redesign
+Redesenho de arquitetura
 
-Cloud migration
+Migração para cloud
 
 ---
 

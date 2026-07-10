@@ -21,29 +21,29 @@ tags:
 
 # {{project}}
 
-> Project Knowledge Home
+> Home do Conhecimento do Projeto
 
 ---
 
-# Purpose
+# Propósito
 
-Describe the project.
+Descreva o projeto.
 
-Answer:
+Responda:
 
-What problem does this project solve?
+Qual problema este projeto resolve?
 
-Who uses it?
+Quem o utiliza?
 
-Why does it exist?
+Por que ele existe?
 
-Avoid implementation details.
+Evite detalhes de implementação.
 
 ---
 
-# Current Status
+# Status Atual
 
-Examples
+Exemplos
 
 Active Development
 
@@ -61,7 +61,7 @@ Production
 
 ---
 
-# Repository
+# Repositório
 
 Repository
 
@@ -69,11 +69,11 @@ Default Branch
 
 Current Version
 
-Last Documentation Update
+Última Atualização da Documentação
 
 ---
 
-# Technology Stack
+# Stack Tecnológica
 
 Backend
 
@@ -95,41 +95,41 @@ Package Manager
 
 ---
 
-# Architecture Summary
+# Resumo da Arquitetura
 
-Summarize the architecture.
+Resuma a arquitetura.
 
-Do not duplicate Architecture.md.
+Não duplique Architecture.md.
 
-Reference it instead.
+Referencie-o.
 
-Example
+Exemplo
 
-See
+Veja
 
 [[Architecture]]
 
 ---
 
-# Main Modules
+# Módulos Principais
 
-List every major module.
+Liste cada módulo principal.
 
-For each module explain
+Para cada módulo explique
 
-Purpose
+Propósito
 
-Responsibilities
+Responsabilidades
 
-Related documentation
+Documentação relacionada
 
-Example
+Exemplo
 
 ## Authentication
 
-Responsible for authentication.
+Responsável pela autenticação.
 
-Documentation
+Documentação
 
 [[Authentication]]
 
@@ -137,9 +137,9 @@ Documentation
 
 ## Payments
 
-Responsible for payment lifecycle.
+Responsável pelo ciclo de vida de pagamentos.
 
-Documentation
+Documentação
 
 [[Payments]]
 
@@ -147,19 +147,19 @@ Documentation
 
 ## Users
 
-Responsible for user management.
+Responsável pelo gerenciamento de usuários.
 
-Documentation
+Documentação
 
 [[Users]]
 
 ---
 
-# External Integrations
+# Integrações Externas
 
-List integrations.
+Liste integrações.
 
-Examples
+Exemplos
 
 Stripe
 
@@ -175,17 +175,17 @@ Cloudflare
 
 OAuth
 
-Reference documentation whenever available.
+Referencie documentação sempre que disponível.
 
 ---
 
-# Running the Project
+# Executando o Projeto
 
-Document
+Documente
 
-Requirements
+Requisitos
 
-Installation
+Instalação
 
 Build
 
@@ -195,13 +195,13 @@ Testing
 
 Production
 
-Keep instructions concise.
+Mantenha as instruções concisas.
 
-Detailed setup belongs in repository documentation.
+Setup detalhado pertence à documentação do repositório.
 
 ---
 
-# Environments
+# Ambientes
 
 Development
 
@@ -211,11 +211,11 @@ Production
 
 Local
 
-Document differences.
+Documente as diferenças.
 
 ---
 
-# Documentation Map
+# Mapa da Documentação
 
 Architecture
 
@@ -227,27 +227,27 @@ ADR
 
 Business Rules
 
-[[Business]]
+[[Knowledge/Business]]
 
 Infrastructure
 
-[[Infrastructure]]
+[[Knowledge/Infrastructure]]
 
 Framework Notes
 
-[[Frameworks]]
+[[Knowledge/Frameworks]]
 
 Integrations
 
-[[Integrations]]
+[[Knowledge/Integrations]]
 
 Troubleshooting
 
-[[Troubleshooting]]
+[[Knowledge/Troubleshooting]]
 
 Features
 
-[[Features]]
+[[Knowledge/Features]]
 
 Releases
 
@@ -259,53 +259,53 @@ Handoffs
 
 ---
 
-# Active Features
+# Features Ativas
 
-List current major features.
+Liste as features principais atuais.
 
-Reference documentation.
-
----
-
-# Current Priorities
-
-Describe
-
-Major initiatives
-
-Large refactoring
-
-Migration
-
-Infrastructure improvements
-
-Performance work
-
-Security work
+Referencie a documentação.
 
 ---
 
-# Known Limitations
+# Prioridades Atuais
 
-Document
+Descreva
 
-Technical debt
+Iniciativas principais
 
-Architecture limitations
+Refatorações grandes
 
-Framework limitations
+Migração
 
-Operational constraints
+Melhorias de infraestrutura
 
-Business constraints
+Trabalho de performance
+
+Trabalho de segurança
 
 ---
 
-# Important Decisions
+# Limitações Conhecidas
 
-Reference important ADRs.
+Documente
 
-Examples
+Dívida técnica
+
+Limitações de arquitetura
+
+Limitações de framework
+
+Restrições operacionais
+
+Restrições de negócio
+
+---
+
+# Decisões Importantes
+
+Referencie ADRs importantes.
+
+Exemplos
 
 [[ADR-001 Authentication]]
 
@@ -315,11 +315,11 @@ Examples
 
 ---
 
-# Recent Activity
+# Atividade Recente
 
-Reference recent handoffs.
+Referencie handoffs recentes.
 
-Example
+Exemplo
 
 [[2026-07-09 Authentication Refactor]]
 
@@ -329,25 +329,25 @@ Example
 
 ---
 
-# Open Risks
+# Riscos Abertos
 
-Document
+Documente
 
-Operational risks
+Riscos operacionais
 
-Performance risks
+Riscos de performance
 
-Security risks
+Riscos de segurança
 
-Business risks
+Riscos de negócio
 
-Deployment risks
+Riscos de deploy
 
 ---
 
 # Knowledge Index
 
-Quick access.
+Acesso rápido.
 
 Architecture
 

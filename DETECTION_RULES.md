@@ -5,69 +5,137 @@ Version: 1.0.0
 
 ---
 
-# Purpose
+# Propósito
 
-Before documenting any implementation, understand the project.
+Antes de documentar qualquer implementação, entenda o projeto.
 
-Documentation quality depends directly on understanding the repository.
+A qualidade da documentação depende diretamente do entendimento do repositório.
 
-Never rely solely on the current conversation.
+Nunca dependa apenas da conversa atual.
 
-The repository is the primary source of truth.
-
----
-
-# Detection Priority
-
-Always inspect information in the following order.
-
-1. Repository structure
-
-2. Build files
-
-3. Dependency files
-
-4. Configuration files
-
-5. Git metadata
-
-6. Existing documentation
-
-7. Conversation
-
-The conversation is supplementary.
-
-Never use it as the only source.
+O repositório é a fonte primária da verdade.
 
 ---
 
-# Repository Identity
+# Prioridade de Detecção
+
+Sempre inspecione a informação na seguinte ordem.
+
+1. Estrutura do repositório
+
+2. Arquivos de build
+
+3. Arquivos de dependência
+
+4. Arquivos de configuração
+
+5. Metadados do Git
+
+6. Documentação existente
+
+7. Conversa
+
+A conversa é suplementar.
+
+Nunca a use como única fonte.
+
+---
+
+# Identidade do Repositório
 
 Determine:
 
-Project Name
+Nome do Projeto
 
-Repository Name
+Nome do Repositório
 
-Repository URL
+URL do Repositório
 
-Default Branch
+Branch Padrão
 
-Current Branch
+Branch Atual
 
-Current Commit
+Commit Atual
 
-Workspace Root
+Raiz do Workspace
 
-Repository Type
+Tipo de Repositório
 
-Confidence
+Confiança
 
 ---
 
-# Repository Type
+# Resolução de Projeto
 
-Determine whether the project is:
+Após identificar o repositório, resolva a pasta do projeto no Obsidian.
+
+Fluxo esperado:
+
+1. Detectar Repositório
+
+2. Determinar Nome do Projeto
+
+3. Verificar
+
+~/obsidian/Projects/<Project>
+
+4. Existe?
+
+5. Sim → Continuar
+
+6. Não → Inicializar estrutura do projeto a partir de `project-template/`
+
+7. Continuar
+
+## Nome do Projeto
+
+Use o nome do repositório ou o nome da pasta raiz do workspace como slug do projeto.
+
+Exemplo
+
+Repositório awesome-api
+
+torna-se
+
+~/obsidian/Projects/awesome-api/
+
+## Inicialização do Vault
+
+Se ~/obsidian não existir:
+
+- crie
+- crie Projects/
+- crie Knowledge/
+- crie Templates/
+- crie Inbox/
+- continue normalmente
+
+Nunca pergunte ao usuário onde armazenar documentação.
+
+## Inicialização do Projeto
+
+Se ~/obsidian/Projects/<Project> não existir:
+
+- replique o diretório `project-template/` da skill nesse path
+- continue normalmente
+
+Nunca peça confirmação.
+
+Nunca pule a inicialização.
+
+## Política de Monorepo
+
+Um monorepo ou workspace mapeia para exatamente uma pasta de projeto.
+
+Use o nome da raiz do workspace como nome do projeto.
+
+Não crie uma pasta de projeto por package na V1.
+
+---
+
+# Tipo de Repositório
+
+Determine se o projeto é:
 
 Single Repository
 
@@ -91,15 +159,15 @@ Infrastructure
 
 Unknown
 
-Never guess.
+Nunca chute.
 
 ---
 
-# Programming Languages
+# Linguagens de Programação
 
-Detect every language.
+Detecte toda linguagem.
 
-Examples
+Exemplos
 
 Java
 
@@ -137,11 +205,11 @@ Markdown
 
 ---
 
-# Package Managers
+# Gerenciadores de Pacotes
 
-Detect automatically.
+Detecte automaticamente.
 
-Examples
+Exemplos
 
 npm
 
@@ -171,9 +239,9 @@ Poetry
 
 # Frameworks
 
-Detect frameworks.
+Detecte frameworks.
 
-Examples
+Exemplos
 
 Spring Boot
 
@@ -217,15 +285,15 @@ Fiber
 
 Echo
 
-Never assume.
+Nunca assuma.
 
 ---
 
 # Infrastructure
 
-Detect infrastructure.
+Detecte infraestrutura.
 
-Examples
+Exemplos
 
 Docker
 
@@ -269,9 +337,9 @@ OpenTelemetry
 
 # Databases
 
-Detect all databases.
+Detecte todos os bancos de dados.
 
-Examples
+Exemplos
 
 PostgreSQL
 
@@ -305,7 +373,7 @@ InfluxDB
 
 # Messaging
 
-Detect messaging systems.
+Detecte sistemas de mensageria.
 
 RabbitMQ
 
@@ -327,7 +395,7 @@ NATS
 
 # Cloud
 
-Detect cloud providers.
+Detecte provedores de cloud.
 
 AWS
 
@@ -355,29 +423,29 @@ Netlify
 
 ---
 
-# Repository Structure
+# Estrutura do Repositório
 
-Understand:
+Entenda:
 
-Modules
+Módulos
 
 Packages
 
-Services
+Serviços
 
-Applications
+Aplicações
 
 Libraries
 
-Shared code
+Código compartilhado
 
 Utilities
 
-Configuration
+Configuração
 
-Tests
+Testes
 
-Documentation
+Documentação
 
 Assets
 
@@ -385,9 +453,9 @@ Assets
 
 # Architecture
 
-Infer architecture.
+Infira a arquitetura.
 
-Examples
+Exemplos
 
 Layered
 
@@ -411,65 +479,81 @@ CQRS
 
 Unknown
 
-Confidence must always be recorded.
+A confiança deve sempre ser registrada.
 
 ---
 
-# Git Analysis
+# Análise do Git
 
-Inspect:
+Inspecione:
 
-Current Branch
+Branch Atual
 
 Commit
 
-Modified Files
+Arquivos Modificados
 
-Deleted Files
+Arquivos Deletados
 
-Added Files
+Arquivos Adicionados
 
-Renamed Files
+Arquivos Renomeados
 
-Staged Files
+Arquivos Staged
 
-Untracked Files
+Arquivos Untracked
 
-Recent History
+Histórico Recente
 
-Never depend exclusively on Git history.
+Nunca dependa exclusivamente do histórico do Git.
 
 ---
 
-# Existing Documentation
+# Documentação Existente
 
-Read existing documentation before generating new documentation.
+Leia a documentação existente antes de gerar nova documentação.
 
-Prioritize:
+Escopo de busca:
+
+1. ~/obsidian/Projects/<Project>/
+
+2. ~/obsidian/Knowledge/ quando o tema for conhecimento de engenharia reutilizável
+
+Nunca leia ou escreva em outras pastas Projects/* na tarefa atual.
+
+Priorize dentro do projeto atual:
 
 README
 
-Architecture
+INDEX
+
+Architecture.md
 
 ADR
 
-Business Rules
+Knowledge/Business
 
-Troubleshooting
+Knowledge/Troubleshooting
 
-INDEX
+Knowledge/Infrastructure
 
-Recent Handoffs
+Knowledge/Features
 
-Never overwrite established knowledge without reason.
+Knowledge/Bugs
+
+Handoffs recentes
+
+Releases
+
+Nunca sobrescreva conhecimento estabelecido sem motivo.
 
 ---
 
-# Build System
+# Sistema de Build
 
-Determine how the project is built.
+Determine como o projeto é construído.
 
-Examples
+Exemplos
 
 Maven
 
@@ -497,7 +581,7 @@ Cargo
 
 # Testing
 
-Detect testing frameworks.
+Detecte frameworks de teste.
 
 JUnit
 
@@ -523,7 +607,7 @@ Go Test
 
 # Deployment
 
-Identify deployment technologies.
+Identifique tecnologias de deploy.
 
 Docker
 
@@ -551,68 +635,76 @@ Fly
 
 ---
 
-# Confidence Levels
+# Níveis de Confiança
 
-Every automatic detection must have confidence.
+Toda detecção automática deve ter confiança.
 
 High
 
-Information explicitly found.
+Informação encontrada explicitamente.
 
 Medium
 
-Strong evidence.
+Evidência forte.
 
 Low
 
-Inference.
+Inferência.
 
 Unknown
 
-Not enough information.
+Informação insuficiente.
 
-Never convert assumptions into facts.
-
----
-
-# Missing Information
-
-When something cannot be detected:
-
-Record it.
-
-Never invent.
-
-Never hallucinate.
+Nunca converta premissas em fatos.
 
 ---
 
-# Detection Quality Checklist
+# Informação Ausente
 
-Repository identified
+Quando algo não puder ser detectado:
 
-Project identified
+Registre.
 
-Stack identified
+Nunca invente.
 
-Framework identified
-
-Infrastructure identified
-
-Architecture inferred
-
-Documentation consulted
-
-Confidence assigned
-
-Unknown items recorded
+Nunca alucine.
 
 ---
 
-# Golden Rule
+# Checklist de Qualidade da Detecção
 
-Understand first.
+Repositório identificado
 
-Document second.
+Projeto identificado
 
-Never reverse this order.
+Raiz do vault resolvida ou inicializada
+
+Pasta do projeto resolvida ou inicializada a partir de project-template/
+
+Stack identificada
+
+Framework identificado
+
+Infraestrutura identificada
+
+Arquitetura inferida
+
+Documentação do projeto consultada
+
+Knowledge global consultado quando relevante
+
+Outras pastas Projects não usadas como destinos de escrita
+
+Confiança atribuída
+
+Itens desconhecidos registrados
+
+---
+
+# Regra de Ouro
+
+Entenda primeiro.
+
+Documente depois.
+
+Nunca inverta esta ordem.

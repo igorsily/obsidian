@@ -22,75 +22,75 @@ tags:
 
 # {{title}}
 
-> Business Rule
+> Regra de Negócio
 
 ---
 
-# Purpose
+# Propósito
 
-Describe the business rule.
+Descreva a regra de negócio.
 
-What does this rule enforce?
+O que esta regra garante?
 
-Who is affected?
+Quem é afetado?
 
-Why does this rule exist?
-
----
-
-# Business Context
-
-Explain the business process.
-
-Where does this rule apply?
-
-Which users are involved?
-
-Which business event triggers it?
+Por que esta regra existe?
 
 ---
 
-# Rule Description
+# Contexto de Negócio
 
-Describe the rule using plain language.
+Explique o processo de negócio.
 
-Avoid implementation details.
+Onde esta regra se aplica?
 
-Good example
+Quais usuários estão envolvidos?
 
-Only one active owner may exist for a property.
+Qual evento de negócio a dispara?
 
-Bad example
+---
+
+# Descrição da Regra
+
+Descreva a regra em linguagem simples.
+
+Evite detalhes de implementação.
+
+Bom exemplo
+
+Apenas um owner ativo pode existir para uma property.
+
+Mau exemplo
 
 Validate owner.active == true.
 
 ---
 
-# Motivation
+# Motivação
 
-Explain why this rule exists.
+Explique por que esta regra existe.
 
-Examples
+Exemplos
 
-Legal requirement
+Requisito legal
 
-Financial rule
+Regra financeira
 
-Operational process
+Processo operacional
 
-Security requirement
+Requisito de segurança
 
-Customer requirement
+Requisito do cliente
 
-Legacy constraint
+Restrição legada
 
 ---
 
-# Scope
+# Escopo
 
-Describe where the rule applies.
+Descreva onde a regra se aplica.
 
-Examples
+Exemplos
 
 Registration
 
@@ -112,105 +112,105 @@ Exports
 
 ---
 
-# Preconditions
+# Pré-condições
 
-What must be true before this rule applies?
+O que deve ser verdadeiro antes desta regra se aplicar?
 
-Example
+Exemplo
 
-The property already exists.
+A property já existe.
 
-The user is authenticated.
+O usuário está autenticado.
 
-The invoice is unpaid.
-
----
-
-# Rule
-
-Describe the rule precisely.
-
-If useful, split into steps.
-
-Example
-
-1. Validate ownership.
-
-2. Check active contracts.
-
-3. Reject duplicates.
-
-4. Persist ownership.
+A invoice está em aberto.
 
 ---
 
-# Exceptions
+# Regra
 
-List situations where the rule does not apply.
+Descreva a regra com precisão.
 
-Explain why.
+Se útil, divida em passos.
+
+Exemplo
+
+1. Validar ownership.
+
+2. Verificar contratos ativos.
+
+3. Rejeitar duplicatas.
+
+4. Persistir ownership.
 
 ---
 
-# Validation
+# Exceções
 
-How should the rule be validated?
+Liste situações em que a regra não se aplica.
 
-Examples
+Explique o motivo.
 
-UI validation
+---
 
-API validation
+# Validação
 
-Database constraint
+Como a regra deve ser validada?
 
-Scheduled process
+Exemplos
+
+Validação de UI
+
+Validação de API
+
+Constraint de banco de dados
+
+Processo agendado
 
 Background worker
 
 ---
 
-# Error Behavior
+# Comportamento em Erro
 
-Describe what happens when the rule is violated.
+Descreva o que acontece quando a regra é violada.
 
-Example
+Exemplo
 
 HTTP 409
 
-Validation message
+Mensagem de validação
 
 Rollback
 
-Audit log
+Log de auditoria
 
-Notification
-
----
-
-# Business Impact
-
-Describe what happens if this rule is removed or ignored.
-
-Examples
-
-Duplicate invoices
-
-Invalid ownership
-
-Financial inconsistency
-
-Data corruption
-
-Legal issues
+Notificação
 
 ---
 
-# Dependencies
+# Impacto no Negócio
 
-Reference related rules.
+Descreva o que acontece se esta regra for removida ou ignorada.
 
-Examples
+Exemplos
+
+Invoices duplicadas
+
+Ownership inválido
+
+Inconsistência financeira
+
+Corrupção de dados
+
+Problemas legais
+
+---
+
+# Dependências
+
+Referencie regras relacionadas.
+
+Exemplos
 
 [[Property Lifecycle]]
 
@@ -220,11 +220,11 @@ Examples
 
 ---
 
-# Related Features
+# Features Relacionadas
 
-Reference affected features.
+Referencie features afetadas.
 
-Examples
+Exemplos
 
 [[Property Registration]]
 
@@ -232,9 +232,9 @@ Examples
 
 ---
 
-# Related Architecture
+# Arquitetura Relacionada
 
-Examples
+Exemplos
 
 [[Properties]]
 
@@ -244,31 +244,31 @@ Examples
 
 ---
 
-# Related ADR
+# ADR Relacionado
 
-Reference architecture decisions.
+Referencie decisões de arquitetura.
 
-Examples
+Exemplos
 
 [[ADR-004 Ownership Model]]
 
 ---
 
-# Related Handoffs
+# Handoffs Relacionados
 
-Reference implementation history.
+Referencie o histórico de implementação.
 
-Examples
+Exemplos
 
 [[2026-07-12 Property Ownership]]
 
 ---
 
-# Examples
+# Exemplos
 
-Provide practical examples.
+Forneça exemplos práticos.
 
-## Valid
+## Válido
 
 Property A
 
@@ -276,11 +276,11 @@ Owner John
 
 Status Active
 
-Accepted
+Aceito
 
 ---
 
-## Invalid
+## Inválido
 
 Property A
 
@@ -288,43 +288,43 @@ Owner John
 
 Owner Mary
 
-Both Active
+Ambos Active
 
-Rejected
+Rejeitado
 
 ---
 
-# Edge Cases
+# Casos Extremos
 
-Describe unusual situations.
+Descreva situações incomuns.
 
-Examples
+Exemplos
 
-Migration
+Migração
 
 Imports
 
-Legacy data
+Dados legados
 
-Deleted users
+Usuários excluídos
 
-Archived properties
+Properties arquivadas
 
 ---
 
-# Future Considerations
+# Considerações Futuras
 
-Describe possible future changes.
+Descreva possíveis mudanças futuras.
 
-Examples
+Exemplos
 
-Multiple ownership
+Ownership múltiplo
 
-Temporary ownership
+Ownership temporário
 
 Co-ownership
 
-International legislation
+Legislação internacional
 
 ---
 

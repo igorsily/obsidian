@@ -24,29 +24,29 @@ tags:
 
 # {{title}}
 
-> Infrastructure Component Documentation
+> Documentação de Componente de Infraestrutura
 
 ---
 
-# Purpose
+# Propósito
 
-Describe the infrastructure component.
+Descreva o componente de infraestrutura.
 
-Answer:
+Responda:
 
-What is this component?
+O que é este componente?
 
-Why does the project use it?
+Por que o projeto o utiliza?
 
-Which parts of the system depend on it?
+Quais partes do sistema dependem dele?
 
 ---
 
-# Overview
+# Visão Geral
 
-Provide a high-level description.
+Forneça uma descrição de alto nível.
 
-Examples
+Exemplos
 
 Database
 
@@ -70,35 +70,35 @@ Cloud Service
 
 ---
 
-# Responsibilities
+# Responsabilidades
 
-Describe the responsibilities of this component.
+Descreva as responsabilidades deste componente.
 
-Examples
+Exemplos
 
-Store persistent data
+Armazenar dados persistentes
 
-Cache application data
+Fazer cache de dados da aplicação
 
-Route HTTP traffic
+Roteamento de tráfego HTTP
 
-Manage TLS certificates
+Gerenciar certificados TLS
 
-Queue asynchronous jobs
+Enfileirar jobs assíncronos
 
-Expose metrics
+Expor métricas
 
-Persist logs
+Persistir logs
 
 ---
 
-# Architecture Position
+# Posição na Arquitetura
 
-Explain where this component fits.
+Explique onde este componente se encaixa.
 
-Reference related architecture.
+Referencie arquitetura relacionada.
 
-Examples
+Exemplos
 
 [[Architecture]]
 
@@ -108,11 +108,11 @@ Examples
 
 ---
 
-# Dependencies
+# Dependências
 
-Describe what this component depends on.
+Descreva do que este componente depende.
 
-Examples
+Exemplos
 
 Docker
 
@@ -124,7 +124,7 @@ Certificates
 
 Secrets
 
-Other Services
+Outros Serviços
 
 Network
 
@@ -132,11 +132,11 @@ DNS
 
 ---
 
-# Dependents
+# Dependentes
 
-Describe which parts of the system depend on this component.
+Descreva quais partes do sistema dependem deste componente.
 
-Examples
+Exemplos
 
 Backend
 
@@ -154,11 +154,11 @@ CI/CD
 
 ---
 
-# Configuration
+# Configuração
 
-Document relevant configuration.
+Documente a configuração relevante.
 
-Examples
+Exemplos
 
 Ports
 
@@ -174,45 +174,45 @@ Health Checks
 
 Restart Policy
 
-Avoid documenting secrets.
+Evite documentar secrets.
 
-Instead explain where secrets are stored.
+Em vez disso, explique onde os secrets são armazenados.
 
 ---
 
-# Data Storage
+# Armazenamento de Dados
 
-If applicable describe
+Se aplicável descreva
 
-Persistence
+Persistência
 
 Volumes
 
 Backups
 
-Replication
+Replicação
 
-Retention
+Retenção
 
-Recovery
+Recuperação
 
-Migration
+Migração
 
 ---
 
-# Networking
+# Rede
 
-Describe
+Descreva
 
 Ports
 
 Protocols
 
-Internal communication
+Comunicação interna
 
-External exposure
+Exposição externa
 
-Firewall rules
+Regras de firewall
 
 DNS
 
@@ -222,21 +222,21 @@ TLS
 
 ---
 
-# Security
+# Segurança
 
-Document
+Documente
 
-Authentication
+Autenticação
 
-Authorization
+Autorização
 
 Certificates
 
 Secrets
 
-Encryption
+Criptografia
 
-Network isolation
+Isolamento de rede
 
 Least privilege
 
@@ -244,11 +244,11 @@ Audit logging
 
 ---
 
-# High Availability
+# Alta Disponibilidade
 
-Describe
+Descreva
 
-Replication
+Replicação
 
 Clustering
 
@@ -256,19 +256,19 @@ Failover
 
 Leader election
 
-Redundancy
+Redundância
 
-Recovery
+Recuperação
 
-Expected downtime
+Downtime esperado
 
 ---
 
 # Performance
 
-Document
+Documente
 
-Resource usage
+Uso de recursos
 
 CPU
 
@@ -278,21 +278,21 @@ Disk
 
 Connections
 
-Concurrency
+Concorrência
 
 Caching
 
 Limits
 
-Known bottlenecks
+Gargalos conhecidos
 
 ---
 
-# Monitoring
+# Monitoramento
 
-Describe
+Descreva
 
-Metrics
+Métricas
 
 Logs
 
@@ -300,39 +300,39 @@ Dashboards
 
 Tracing
 
-Alerts
+Alertas
 
 Health endpoints
 
-Recovery procedures
+Procedimentos de recuperação
 
 ---
 
-# Deployment
+# Deploy
 
-Explain
+Explique
 
-Installation
+Instalação
 
 Provisioning
 
-Configuration
+Configuração
 
-Upgrade process
+Processo de upgrade
 
 Rollback
 
-Versioning
+Versionamento
 
-Maintenance
+Manutenção
 
 ---
 
-# Operational Procedures
+# Procedimentos Operacionais
 
-Document common operations.
+Documente operações comuns.
 
-Examples
+Exemplos
 
 Start
 
@@ -348,129 +348,129 @@ Scale
 
 Upgrade
 
-Rotate certificates
+Rotacionar certificados
 
-Rotate secrets
+Rotacionar secrets
 
 ---
 
-# Failure Modes
+# Modos de Falha
 
-Describe common failures.
+Descreva falhas comuns.
 
-Examples
+Exemplos
 
-Container crash
+Crash de container
 
-Disk full
+Disco cheio
 
 Connection timeout
 
-Network partition
+Partição de rede
 
-Certificate expiration
+Expiração de certificado
 
-Memory exhaustion
+Esgotamento de memória
 
-Database corruption
-
----
-
-# Recovery
-
-Explain how to recover.
-
-Document
-
-Detection
-
-Diagnosis
-
-Recovery steps
-
-Validation
-
-Post-recovery checks
+Corrupção de banco de dados
 
 ---
 
-# Maintenance
+# Recuperação
 
-Document recurring tasks.
+Explique como recuperar.
 
-Examples
+Documente
+
+Detecção
+
+Diagnóstico
+
+Passos de recuperação
+
+Validação
+
+Verificações pós-recuperação
+
+---
+
+# Manutenção
+
+Documente tarefas recorrentes.
+
+Exemplos
 
 Backups
 
 Updates
 
-Security patches
+Patches de segurança
 
-Certificate renewal
+Renovação de certificados
 
-Log cleanup
+Limpeza de logs
 
 Vacuum
 
-Index maintenance
+Manutenção de índices
 
-Monitoring review
-
----
-
-# Known Limitations
-
-Document
-
-Infrastructure constraints
-
-Provider limitations
-
-Scaling limitations
-
-Operational risks
-
-Technical debt
+Revisão de monitoramento
 
 ---
 
-# Capacity Planning
+# Limitações Conhecidas
 
-Describe
+Documente
 
-Expected growth
+Restrições de infraestrutura
 
-Scaling strategy
+Limitações do provedor
 
-Storage projections
+Limitações de scaling
 
-CPU projections
+Riscos operacionais
 
-Memory projections
+Dívida técnica
 
-Operational thresholds
+---
+
+# Planejamento de Capacidade
+
+Descreva
+
+Crescimento esperado
+
+Estratégia de scaling
+
+Projeções de armazenamento
+
+Projeções de CPU
+
+Projeções de memória
+
+Limiares operacionais
 
 ---
 
 # Disaster Recovery
 
-Document
+Documente
 
 Recovery Point Objective (RPO)
 
 Recovery Time Objective (RTO)
 
-Backup strategy
+Estratégia de backup
 
-Restore validation
+Validação de restore
 
-Disaster recovery testing
+Testes de disaster recovery
 
 ---
 
-# Related Components
+# Componentes Relacionados
 
-Reference
+Referência
 
 [[Docker]]
 
@@ -486,31 +486,31 @@ Reference
 
 ---
 
-# Related Architecture
+# Arquitetura Relacionada
 
 [[Architecture]]
 
 ---
 
-# Related Integrations
+# Integrações Relacionadas
 
 [[Integration]]
 
 ---
 
-# Related Troubleshooting
+# Troubleshooting Relacionado
 
-[[Troubleshooting]]
+[[Knowledge/Troubleshooting]]
 
 ---
 
-# Related ADR
+# ADR Relacionado
 
 [[ADR]]
 
 ---
 
-# Related Handoffs
+# Handoffs Relacionados
 
 [[Handoffs]]
 

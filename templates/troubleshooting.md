@@ -24,57 +24,57 @@ tags:
 
 # {{title}}
 
-> Troubleshooting Guide
+> Guia de Troubleshooting
 
 ---
 
-# Summary
+# Resumo
 
-Provide a short description of the problem.
+Forneça uma descrição curta do problema.
 
-Examples
+Exemplos
 
-- Application does not start
-- Docker container cannot connect to PostgreSQL
-- Redis cache is not updating
-- Angular build fails
-- Spring Boot crashes during startup
+- A aplicação não inicia
+- O container Docker não consegue conectar ao PostgreSQL
+- O cache Redis não está atualizando
+- O build do Angular falha
+- O Spring Boot falha durante o startup
 
 ---
 
-# Symptoms
+# Sintomas
 
-Describe every observable symptom.
+Descreva cada sintoma observável.
 
-Examples
+Exemplos
 
 HTTP 500
 
 Connection timeout
 
-Container restarting
+Container reiniciando
 
-High CPU usage
+Alto uso de CPU
 
 Memory leak
 
-Compilation failure
+Falha de compilação
 
-Authentication failure
+Falha de autenticação
 
-Unexpected behavior
+Comportamento inesperado
 
-Avoid assumptions.
+Evite premissas.
 
-Describe only what is observed.
+Descreva apenas o que é observado.
 
 ---
 
-# Environment
+# Ambiente
 
-Document where the problem occurred.
+Documente onde o problema ocorreu.
 
-Examples
+Exemplos
 
 Development
 
@@ -94,133 +94,133 @@ MacOS
 
 Cloud
 
-Include versions whenever known.
+Inclua versões sempre que conhecidas.
 
 ---
 
-# Detection
+# Detecção
 
-How can someone confirm this is the same problem?
+Como alguém pode confirmar que é o mesmo problema?
 
-Examples
+Exemplos
 
-Error messages
+Mensagens de erro
 
-Log entries
+Entradas de log
 
 Stack traces
 
-Metrics
+Métricas
 
-Monitoring alerts
+Alertas de monitoramento
 
-Database behavior
+Comportamento do banco de dados
 
-API responses
+Respostas da API
 
-CLI output
-
----
-
-# Root Cause
-
-Explain the real cause.
-
-Avoid superficial explanations.
-
-Bad
-
-Docker failed.
-
-Good
-
-The application attempted to resolve the PostgreSQL hostname before the Docker network became available.
-
-Always explain the underlying reason.
+Saída de CLI
 
 ---
 
-# Resolution
+# Causa Raiz
 
-Describe the complete solution.
+Explique a causa real.
 
-Explain every required step.
+Evite explicações superficiais.
 
-Include commands when useful.
+Ruim
 
-Do not assume prior knowledge.
+O Docker falhou.
 
----
+Bom
 
-# Validation
+A aplicação tentou resolver o hostname do PostgreSQL antes da rede Docker ficar disponível.
 
-Explain how to verify the problem has been solved.
-
-Examples
-
-Application starts
-
-Health endpoint responds
-
-Database connection established
-
-Tests pass
-
-Container remains healthy
-
-Monitoring returns to normal
+Sempre explique a razão subjacente.
 
 ---
 
-# Prevention
+# Resolução
 
-Explain how to avoid the issue.
+Descreva a solução completa.
 
-Examples
+Explique cada passo necessário.
 
-Infrastructure improvements
+Inclua comandos quando úteis.
 
-Configuration changes
+Não assuma conhecimento prévio.
 
-Monitoring
+---
 
-Documentation
+# Validação
 
-Automation
+Explique como verificar que o problema foi resolvido.
 
-CI validation
+Exemplos
 
-Startup ordering
+A aplicação inicia
+
+O endpoint de health responde
+
+A conexão com o banco foi estabelecida
+
+Os testes passam
+
+O container permanece saudável
+
+O monitoramento volta ao normal
+
+---
+
+# Prevenção
+
+Explique como evitar o problema.
+
+Exemplos
+
+Melhorias de infraestrutura
+
+Mudanças de configuração
+
+Monitoramento
+
+Documentação
+
+Automação
+
+Validação de CI
+
+Ordenação de startup
 
 Health checks
 
 ---
 
-# Impact
+# Impacto
 
-Describe the impact.
+Descreva o impacto.
 
-Examples
+Exemplos
 
-System unavailable
+Sistema indisponível
 
-Authentication broken
+Autenticação quebrada
 
-Deployment blocked
+Deploy bloqueado
 
-Performance degraded
+Performance degradada
 
-Data inconsistency
+Inconsistência de dados
 
-Developer productivity
+Produtividade do desenvolvedor
 
 ---
 
-# Related Components
+# Componentes Relacionados
 
-Reference affected components.
+Referencie componentes afetados.
 
-Examples
+Exemplos
 
 [[Docker]]
 
@@ -234,47 +234,47 @@ Examples
 
 ---
 
-# Related Features
+# Features Relacionadas
 
-Reference affected features.
-
----
-
-# Related Infrastructure
-
-Reference infrastructure documentation.
+Referencie features afetadas.
 
 ---
 
-# Related Architecture
+# Infraestrutura Relacionada
 
-Reference architectural concepts.
-
----
-
-# Related Business Rules
-
-Reference business rules if applicable.
+Referencie documentação de infraestrutura.
 
 ---
 
-# Related ADR
+# Arquitetura Relacionada
 
-Reference relevant architecture decisions.
-
----
-
-# Related Handoffs
-
-Reference implementation history.
+Referencie conceitos arquiteturais.
 
 ---
 
-# Similar Problems
+# Regras de Negócio Relacionadas
 
-Reference similar troubleshooting guides.
+Referencie regras de negócio se aplicável.
 
-Examples
+---
+
+# ADR Relacionado
+
+Referencie decisões de arquitetura relevantes.
+
+---
+
+# Handoffs Relacionados
+
+Referencie o histórico de implementação.
+
+---
+
+# Problemas Semelhantes
+
+Referencie guias de troubleshooting semelhantes.
+
+Exemplos
 
 [[Docker Networking]]
 
@@ -284,11 +284,11 @@ Examples
 
 ---
 
-# Notes
+# Notas
 
-Include additional observations that may help future investigations.
+Inclua observações adicionais que possam ajudar investigações futuras.
 
-Avoid speculation.
+Evite especulação.
 
 ---
 

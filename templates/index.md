@@ -18,51 +18,51 @@ tags:
 
 # {{project}} Knowledge Index
 
-> This is the primary entry point for the project's engineering knowledge.
+> Este é o ponto de entrada principal do conhecimento de engenharia do projeto.
 
 ---
 
-# Project Overview
+# Visão Geral do Projeto
 
-Quick access to the most important project information.
+Acesso rápido às informações mais importantes do projeto.
 
-Project
+Projeto
 
-Repository
+Repositório
 
-Architecture Style
+Estilo de Arquitetura
 
-Primary Technologies
+Tecnologias Principais
 
-Current Version
+Versão Atual
 
-Last Documentation Update
+Última Atualização da Documentação
 
 ---
 
-# Start Here
+# Comece Por Aqui
 
-If you are new to this project, read the following documents in order.
+Se você é novo neste projeto, leia os documentos a seguir nesta ordem.
 
 1. [[README]]
 
 2. [[Architecture]]
 
-3. [[Business]]
+3. [[Knowledge/Business]]
 
-4. [[Infrastructure]]
+4. [[Knowledge/Infrastructure]]
 
-5. Latest Release
+5. Última Release
 
-6. Latest Handoff
+6. Último Handoff
 
 ---
 
-# Current Project Status
+# Status Atual do Projeto
 
-Document the current state.
+Documente o estado atual.
 
-Examples
+Exemplos
 
 Active Development
 
@@ -78,17 +78,17 @@ Deprecated
 
 ---
 
-# Knowledge Areas
+# Áreas de Conhecimento
 
 ## Architecture
 
-System architecture
+Arquitetura do sistema
 
-Modules
+Módulos
 
-Data Flow
+Fluxo de Dados
 
-Technical Decisions
+Decisões Técnicas
 
 → [[Architecture]]
 
@@ -96,61 +96,61 @@ Technical Decisions
 
 ## Business Rules
 
-Business knowledge
+Conhecimento de negócio
 
-Validation
+Validação
 
-Domain Rules
+Regras de Domínio
 
-Permissions
+Permissões
 
-→ [[Business]]
+→ [[Knowledge/Business]]
 
 ---
 
 ## Infrastructure
 
-Deployment
+Deploy
 
 Docker
 
 Cloud
 
-Networking
+Rede
 
-Monitoring
+Monitoramento
 
-→ [[Infrastructure]]
+→ [[Knowledge/Infrastructure]]
 
 ---
 
 ## Integrations
 
-External APIs
+APIs externas
 
-Messaging
+Mensageria
 
-Cloud Services
+Serviços Cloud
 
-Storage
+Armazenamento
 
-Authentication
+Autenticação
 
-→ [[Integrations]]
+→ [[Knowledge/Integrations]]
 
 ---
 
 ## Features
 
-Functional capabilities.
+Capacidades funcionais.
 
-→ [[Features]]
+→ [[Knowledge/Features]]
 
 ---
 
 ## Releases
 
-Version history.
+Histórico de versões.
 
 → [[Releases]]
 
@@ -158,23 +158,23 @@ Version history.
 
 ## Troubleshooting
 
-Operational knowledge.
+Conhecimento operacional.
 
-→ [[Troubleshooting]]
+→ [[Knowledge/Troubleshooting]]
 
 ---
 
 ## Bugs
 
-Known software defects.
+Defeitos conhecidos de software.
 
-→ [[Bugs]]
+→ [[Knowledge/Bugs]]
 
 ---
 
 ## Architecture Decisions
 
-Technical decisions.
+Decisões técnicas.
 
 → [[ADR]]
 
@@ -182,73 +182,73 @@ Technical decisions.
 
 ## Handoffs
 
-Implementation history.
+Histórico de implementação.
 
 → [[Handoffs]]
 
 ---
 
-# Recent Activity
+# Atividade Recente
 
-List the latest engineering activity.
+Liste a atividade de engenharia mais recente.
 
-Examples
+Exemplos
 
-Recent Releases
+Releases Recentes
 
-Recent Features
+Features Recentes
 
-Recent ADRs
+ADRs Recentes
 
-Recent Handoffs
+Handoffs Recentes
 
-Recent Infrastructure Changes
+Mudanças Recentes de Infraestrutura
 
-Recent Bug Fixes
-
----
-
-# Active Initiatives
-
-Describe major ongoing work.
-
-Examples
-
-Migration
-
-Performance Improvements
-
-Authentication Rewrite
-
-Infrastructure Upgrade
-
-Cloud Migration
+Correções Recentes de Bugs
 
 ---
 
-# Current Risks
+# Iniciativas Ativas
 
-Document major project risks.
+Descreva o trabalho importante em andamento.
 
-Examples
+Exemplos
 
-Technical Debt
+Migração
 
-Infrastructure Risks
+Melhorias de Performance
 
-Security Risks
+Reescrita de Autenticação
 
-Scalability
+Upgrade de Infraestrutura
 
-Known Limitations
+Migração para Cloud
 
 ---
 
-# Major Components
+# Riscos Atuais
 
-Reference the primary project modules.
+Documente os principais riscos do projeto.
 
-Examples
+Exemplos
+
+Dívida Técnica
+
+Riscos de Infraestrutura
+
+Riscos de Segurança
+
+Escalabilidade
+
+Limitações Conhecidas
+
+---
+
+# Componentes Principais
+
+Referencie os módulos principais do projeto.
+
+Exemplos
 
 [[Authentication]]
 
@@ -262,11 +262,11 @@ Examples
 
 ---
 
-# External Systems
+# Sistemas Externos
 
-Reference all integrations.
+Referencie todas as integrações.
 
-Examples
+Exemplos
 
 [[RabbitMQ]]
 
@@ -280,11 +280,11 @@ Examples
 
 ---
 
-# Development Guidelines
+# Diretrizes de Desenvolvimento
 
-Reference important engineering documentation.
+Referencie documentação importante de engenharia.
 
-Examples
+Exemplos
 
 [[Coding Standards]]
 
@@ -296,17 +296,17 @@ Examples
 
 ---
 
-# Operational Knowledge
+# Conhecimento Operacional
 
-Reference
+Referência
 
-Monitoring
+Monitoramento
 
 Logging
 
 Dashboards
 
-Recovery
+Recuperação
 
 Runbooks
 
@@ -314,29 +314,29 @@ Troubleshooting
 
 ---
 
-# Documentation Health
+# Saúde da Documentação
 
-Review periodically.
+Revise periodicamente.
 
-Questions
+Perguntas
 
-Is documentation current?
+A documentação está atualizada?
 
-Are there duplicate notes?
+Existem notas duplicadas?
 
-Are broken links intentional?
+Links quebrados são intencionais?
 
-Are architecture notes current?
+As notas de arquitetura estão atualizadas?
 
-Are ADRs still valid?
+Os ADRs ainda são válidos?
 
-Are business rules accurate?
+As regras de negócio estão corretas?
 
 ---
 
-# Search Shortcuts
+# Atalhos de Busca
 
-Frequently accessed areas.
+Áreas acessadas com frequência.
 
 Architecture
 
@@ -350,49 +350,49 @@ Troubleshooting
 
 ADR
 
-Recent Releases
+Releases Recentes
 
-Recent Handoffs
+Handoffs Recentes
 
-Recent Bugs
+Bugs Recentes
 
-Recent Features
-
----
-
-# Knowledge Statistics
-
-Optionally maintain
-
-Number of Features
-
-Number of ADRs
-
-Number of Business Rules
-
-Number of Integrations
-
-Number of Infrastructure Components
-
-Number of Troubleshooting Guides
-
-Number of Releases
-
-Number of Handoffs
+Features Recentes
 
 ---
 
-# Last Review
+# Estatísticas de Conhecimento
 
-Document
+Opcionalmente mantenha
 
-Last review date
+Número de Features
 
-Reviewer
+Número de ADRs
 
-General documentation quality
+Número de Regras de Negócio
 
-Outstanding improvements
+Número de Integrações
+
+Número de Componentes de Infraestrutura
+
+Número de Guias de Troubleshooting
+
+Número de Releases
+
+Número de Handoffs
+
+---
+
+# Última Revisão
+
+Documente
+
+Data da última revisão
+
+Revisor
+
+Qualidade geral da documentação
+
+Melhorias pendentes
 
 ---
 

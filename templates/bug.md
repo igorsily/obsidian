@@ -28,73 +28,73 @@ tags:
 
 # {{title}}
 
-> Software Defect Documentation
+> Documentação de Defeito de Software
 
 ---
 
-# Summary
+# Resumo
 
-Provide a concise description of the defect.
+Forneça uma descrição concisa do defeito.
 
-Focus on the incorrect behavior rather than the implementation.
-
----
-
-# Problem Statement
-
-Describe the defect.
-
-What is happening?
-
-What should happen?
-
-What is the difference?
+Foque no comportamento incorreto, não na implementação.
 
 ---
 
-# Expected Behavior
+# Declaração do Problema
 
-Describe the expected behavior.
+Descreva o defeito.
 
-Use business language whenever possible.
+O que está acontecendo?
 
----
+O que deveria acontecer?
 
-# Actual Behavior
-
-Describe the observed behavior.
-
-Avoid assumptions.
-
-Document facts.
+Qual é a diferença?
 
 ---
 
-# Business Impact
+# Comportamento Esperado
 
-Describe the impact.
+Descreva o comportamento esperado.
 
-Examples
-
-Incorrect calculation
-
-Financial loss
-
-Data corruption
-
-Workflow interruption
-
-Security risk
-
-Poor user experience
-
-Operational delays
+Use linguagem de negócio sempre que possível.
 
 ---
 
-# Severity
+# Comportamento Atual
 
-Possible values
+Descreva o comportamento observado.
+
+Evite premissas.
+
+Documente fatos.
+
+---
+
+# Impacto no Negócio
+
+Descreva o impacto.
+
+Exemplos
+
+Cálculo incorreto
+
+Perda financeira
+
+Corrupção de dados
+
+Interrupção de fluxo
+
+Risco de segurança
+
+Má experiência do usuário
+
+Atrasos operacionais
+
+---
+
+# Severidade
+
+Valores possíveis
 
 Critical
 
@@ -106,15 +106,15 @@ Low
 
 Informational
 
-Explain why this severity was assigned.
+Explique por que esta severidade foi atribuída.
 
 ---
 
-# Scope
+# Escopo
 
-Describe where the bug occurs.
+Descreva onde o bug ocorre.
 
-Examples
+Exemplos
 
 Authentication
 
@@ -134,11 +134,11 @@ UI
 
 ---
 
-# Affected Components
+# Componentes Afetados
 
-List affected modules.
+Liste os módulos afetados.
 
-Examples
+Exemplos
 
 Authentication
 
@@ -152,187 +152,187 @@ Angular UI
 
 ---
 
-# Root Cause
+# Causa Raiz
 
-Describe the real cause.
+Descreva a causa real.
 
-Explain
+Explique
 
-Why it happened
+Por que aconteceu
 
-Why it was not detected earlier
+Por que não foi detectado antes
 
-Underlying architectural or business issues
+Problemas arquiteturais ou de negócio subjacentes
 
-Avoid superficial explanations.
+Evite explicações superficiais.
 
 ---
 
-# Reproduction Steps
+# Passos de Reprodução
 
-Describe how to reproduce.
+Descreva como reproduzir.
 
-Example
+Exemplo
 
 1. Login
 
-2. Open Property Registration
+2. Abrir cadastro de Property
 
-3. Add second owner
+3. Adicionar segundo owner
 
-4. Save
+4. Salvar
 
-5. Observe duplicate ownership
+5. Observar ownership duplicado
 
-Reproduction should be deterministic whenever possible.
+A reprodução deve ser determinística sempre que possível.
 
 ---
 
-# Preconditions
+# Pré-condições
 
-Document required conditions.
+Documente as condições necessárias.
 
-Examples
+Exemplos
 
-Specific permissions
+Permissões específicas
 
-Existing records
+Registros existentes
 
-Configuration
+Configuração
 
 Feature flags
 
-Environment
+Ambiente
 
 ---
 
-# Resolution
+# Resolução
 
-Describe the implemented solution.
+Descreva a solução implementada.
 
-Explain
+Explique
 
-What changed
+O que mudou
 
-Why it fixes the problem
+Por que isso corrige o problema
 
-Potential side effects
-
----
-
-# Validation
-
-Describe how the fix should be validated.
-
-Include
-
-Manual testing
-
-Automated testing
-
-Regression testing
-
-Edge cases
-
-Negative testing
+Possíveis efeitos colaterais
 
 ---
 
-# Regression Risk
+# Validação
 
-Describe
+Descreva como a correção deve ser validada.
 
-Areas that may be affected
+Inclua
 
-Related modules
+Testes manuais
 
-Dependencies
+Testes automatizados
 
-Potential unintended consequences
+Testes de regressão
 
----
+Casos extremos
 
-# Prevention
-
-Explain how similar bugs can be avoided.
-
-Examples
-
-Architecture improvements
-
-Better validation
-
-Additional tests
-
-Static analysis
-
-Monitoring
-
-Code review improvements
+Testes negativos
 
 ---
 
-# Related Business Rules
+# Risco de Regressão
 
-Reference
+Descreva
 
-[[Business Rule]]
+Áreas que podem ser afetadas
+
+Módulos relacionados
+
+Dependências
+
+Possíveis consequências indesejadas
 
 ---
 
-# Related Features
+# Prevenção
 
-Reference
+Explique como bugs semelhantes podem ser evitados.
+
+Exemplos
+
+Melhorias de arquitetura
+
+Melhor validação
+
+Testes adicionais
+
+Análise estática
+
+Monitoramento
+
+Melhorias de code review
+
+---
+
+# Regras de Negócio Relacionadas
+
+Referência
+
+[[Knowledge/Business/Business Rule]]
+
+---
+
+# Features Relacionadas
+
+Referência
 
 [[Feature]]
 
 ---
 
-# Related Architecture
+# Arquitetura Relacionada
 
-Reference
+Referência
 
 [[Architecture]]
 
 ---
 
-# Related ADR
+# ADR Relacionado
 
-Reference
+Referência
 
 [[ADR]]
 
 ---
 
-# Related Troubleshooting
+# Troubleshooting Relacionado
 
-Reference
+Referência
 
-[[Troubleshooting]]
-
----
-
-# Related Handoffs
-
-Reference implementation history.
+[[Knowledge/Troubleshooting]]
 
 ---
 
-# Lessons Learned
+# Handoffs Relacionados
 
-Describe knowledge gained.
+Referencie o histórico de implementação.
 
-Examples
+---
 
-Framework behavior
+# Lições Aprendidas
 
-Business misunderstanding
+Descreva o conhecimento obtido.
 
-Architecture weakness
+Exemplos
 
-Validation gap
+Comportamento do framework
 
-Infrastructure assumption
+Mal-entendido de negócio
+
+Fraqueza de arquitetura
+
+Lacuna de validação
+
+Premissa de infraestrutura
 
 ---
 
