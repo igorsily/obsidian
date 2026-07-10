@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Linux
+*~
+
+# Editors
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Obsidian cache
+.obsidian/workspace*.json
+.obsidian/cache/
+
+# Temporary
+tmp/
+temp/
+
+# Generated
+dist/
+build/
