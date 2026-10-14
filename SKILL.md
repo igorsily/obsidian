@@ -1,6 +1,6 @@
 ---
 name: engineering-memory
-version: 1.0.0
+version: 1.1.0
 author: Igor Sily
 description: Framework de memória de engenharia para Obsidian. Use ao documentar handoffs, ADRs, arquitetura, regras de negócio, troubleshooting ou ao preservar conhecimento de projetos de software.
 ---
@@ -55,14 +55,19 @@ Nunca reduza a documentação a um resumo simples.
 
 # Base de Conhecimento Padrão
 
-Salvo instrução explícita em contrário, a base de conhecimento fica em:
+Nesta skill, `$VAULT` é a raiz do vault. Resolva-a nesta ordem e use o primeiro diretório que existir:
 
-~/obsidian
+1. Variável de ambiente `OBSIDIAN_VAULT` (também definida em `~/.config/agent-kit/env` quando o agent-kit está instalado)
+2. WSL: `/mnt/c/Users/$USER/Documents/obsidian`
+3. Windows: `C:\Users\<usuario>\Documents\obsidian`
+4. Linux/macOS: `~/obsidian`
+
+Se o agent-kit estiver instalado, `~/.agent-kit/bin/ak-project` imprime `vault`, `project` e `project_dir` já resolvidos. Prefira essa saída.
 
 Estrutura esperada do vault:
 
 ```
-~/obsidian/
+$VAULT/
 
     Projects/
 
@@ -83,6 +88,36 @@ Nunca pergunte ao usuário onde salvar documentação, a menos que a escrita no 
 
 ---
 
+# Modos de Operação
+
+A skill roda em um de dois modos. Quando o pedido não deixar claro, use **escrita** se houve implementação na sessão e **leitura** caso contrário.
+
+## Modo leitura (início de tarefa)
+
+Objetivo: carregar contexto sem escrever nada.
+
+1. Resolva `$VAULT/Projects/<Project>/`.
+2. Leia `INDEX.md`, `Architecture.md` e o handoff mais recente de `Handoffs/` (ordem alfabética: os nomes começam com a data).
+3. Leia sob demanda os ADRs e as notas de `Knowledge/` ligados ao tema da tarefa.
+4. Resuma ao usuário, em poucas linhas, o que é relevante para a tarefa atual.
+
+Quando o agent-kit está instalado, o hook de início de sessão já injeta `INDEX.md` e o último handoff. Não releia esses arquivos; vá direto ao passo 3.
+
+## Modo escrita (fim de tarefa ou após abrir PR/MR)
+
+Objetivo: preservar o conhecimento gerado.
+
+1. Colete o que foi feito: `git log <base>..HEAD`, `git diff <base>...HEAD --stat`, URL do PR/MR e a conversa.
+2. Crie o handoff em `Handoffs/AAAA-MM-DD <Título>.md` com o template `templates/handoff.md`.
+3. Registre decisões novas como ADR em `ADR/` (template `templates/adr.md`).
+4. Atualize ou crie notas em `Knowledge/Features`, `Knowledge/Business`, `Knowledge/Bugs` ou `Knowledge/Troubleshooting`, preferindo atualizar notas existentes.
+5. Atualize `INDEX.md` com links para as notas novas.
+6. Informe ao usuário os arquivos criados e alterados.
+
+O hook de fim de turno do agent-kit dispara este modo automaticamente quando um PR/MR é aberto e o vault ainda não foi atualizado.
+
+---
+
 # Isolamento de Projetos
 
 Cada projeto possui sua própria documentação.
@@ -91,11 +126,11 @@ Conhecimento de repositórios diferentes nunca deve ser misturado.
 
 Conhecimento específico de projeto sempre pertence a:
 
-~/obsidian/Projects/<Project>/
+$VAULT/Projects/<Project>/
 
 Conhecimento de engenharia reutilizável pertence a:
 
-~/obsidian/Knowledge/
+$VAULT/Knowledge/
 
 Nunca escreva na pasta de outro projeto.
 
@@ -107,7 +142,7 @@ Antes de documentar qualquer coisa, detecte o repositório atual e determine o n
 
 Mapeie o repositório para:
 
-~/obsidian/Projects/<Project>/
+$VAULT/Projects/<Project>/
 
 O usuário nunca deve precisar escolher manualmente onde a documentação é armazenada.
 
@@ -201,9 +236,9 @@ Infira:
 
 Antes de criar qualquer documentação nova:
 
-1. Resolva ~/obsidian/Projects/<Project>/
+1. Resolva $VAULT/Projects/<Project>/
 2. Leia o conhecimento existente dentro dessa pasta do projeto
-3. Quando o tema for conhecimento de engenharia reutilizável, consulte também ~/obsidian/Knowledge/
+3. Quando o tema for conhecimento de engenharia reutilizável, consulte também $VAULT/Knowledge/
 4. Nunca use outra pasta Projects/* como fonte ou destino de escrita da tarefa atual
 
 Priorize:
@@ -336,11 +371,11 @@ Antes de armazenar, decida o destino:
 
 Conhecimento de engenharia reutilizável entre projetos
 
-→ ~/obsidian/Knowledge/
+→ $VAULT/Knowledge/
 
 Conhecimento específico do projeto
 
-→ ~/obsidian/Projects/<Project>/
+→ $VAULT/Projects/<Project>/
 
 Armazene conhecimento reutilizável separado de handoffs e de notas exclusivas do projeto.
 

@@ -19,9 +19,7 @@ Consistência é mais importante do que preferência pessoal.
 
 # Vault Padrão
 
-O Vault Obsidian padrão é:
-
-~/obsidian
+O Vault Obsidian padrão é `$VAULT`, resolvido conforme a seção "Base de Conhecimento Padrão" do SKILL.md (`OBSIDIAN_VAULT`, depois o path do WSL, depois `~/obsidian`).
 
 Nunca pergunte ao usuário onde o Vault está localizado, a menos que a escrita falhe.
 
@@ -34,7 +32,7 @@ Se o Vault não existir:
 Estrutura da raiz do vault:
 
 ```
-~/obsidian/
+$VAULT/
 
     Projects/
 
@@ -61,14 +59,14 @@ awesome-api
 
 torna-se
 
-~/obsidian/Projects/awesome-api/
+$VAULT/Projects/awesome-api/
 
 Nunca crie múltiplas pastas de projeto para o mesmo repositório.
 
 Se a pasta do projeto não existir:
 
 - copie a estrutura de `project-template/` neste repositório da skill
-- coloque em `~/obsidian/Projects/<Project>/`
+- coloque em `$VAULT/Projects/<Project>/`
 - continue normalmente
 
 Nunca peça confirmação antes de inicializar um projeto.
@@ -80,7 +78,7 @@ Nunca peça confirmação antes de inicializar um projeto.
 O Vault Obsidian deve seguir esta estrutura.
 
 ```
-~/obsidian/
+$VAULT/
 
     Projects/
 
@@ -163,7 +161,7 @@ Nunca armazene conhecimento específico de projeto na pasta global `Knowledge/`.
 
 Conhecimento de engenharia reutilizável pertence a:
 
-~/obsidian/Knowledge/
+$VAULT/Knowledge/
 
 Exemplos
 
@@ -195,7 +193,7 @@ O conhecimento global é compartilhado entre todos os projetos.
 
 Conhecimento específico do projeto sempre pertence a:
 
-~/obsidian/Projects/<Project>/
+$VAULT/Projects/<Project>/
 
 Exemplos
 
@@ -225,10 +223,10 @@ Peculiaridades de framework descobertas no repositório
 
 # Bootstrap de Projeto
 
-Quando um novo projeto é detectado e `~/obsidian/Projects/<Project>/` não existe:
+Quando um novo projeto é detectado e `$VAULT/Projects/<Project>/` não existe:
 
 1. Garanta que a raiz do vault exista com `Projects/`, `Knowledge/`, `Templates/` e `Inbox/`
-2. Replique `project-template/` em `~/obsidian/Projects/<Project>/`
+2. Replique `project-template/` em `$VAULT/Projects/<Project>/`
 3. Continue a documentação normalmente
 
 A fonte da verdade do bootstrap é:
@@ -477,7 +475,7 @@ Projects/<Project>/Knowledge/Infrastructure/
 
 Conhecimento de infraestrutura reutilizável entre projetos pertence a:
 
-~/obsidian/Knowledge/
+$VAULT/Knowledge/
 
 ---
 
@@ -499,7 +497,7 @@ Projects/<Project>/Knowledge/Frameworks/
 
 Conhecimento geral de framework pertence a:
 
-~/obsidian/Knowledge/
+$VAULT/Knowledge/
 
 Evite copiar documentação oficial.
 
@@ -567,7 +565,7 @@ Projects/<Project>/Releases/
 
 Rascunhos temporários e notas inacabadas pertencem a:
 
-~/obsidian/Inbox/
+$VAULT/Inbox/
 
 Nunca trate o conteúdo do Inbox como memória permanente do projeto.
 
@@ -579,7 +577,7 @@ Promova conhecimento durável para a pasta correta do projeto ou global.
 
 Templates do vault ficam em:
 
-~/obsidian/Templates/
+$VAULT/Templates/
 
 Templates da skill ficam em:
 

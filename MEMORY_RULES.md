@@ -27,19 +27,19 @@ Se SIM
 
 Armazene em
 
-~/obsidian/Knowledge/
+$VAULT/Knowledge/
 
 Caso contrário
 
 Armazene em
 
-~/obsidian/Projects/<Project>/
+$VAULT/Projects/<Project>/
 
 | Critério | Destino |
 |---|---|
-| Conhecimento de engenharia reutilizável entre projetos (Docker, Spring, Redis, Git, DDD, PostgreSQL, Linux, Java, Angular, AI) | ~/obsidian/Knowledge/<Area>/ |
-| Conhecimento específico do projeto (business rules, features, bugs, ADRs, handoffs, releases, infraestrutura do projeto, troubleshooting do projeto, peculiaridades de framework do projeto) | ~/obsidian/Projects/<Project>/... |
-| Rascunhos temporários e notas inacabadas | ~/obsidian/Inbox/ |
+| Conhecimento de engenharia reutilizável entre projetos (Docker, Spring, Redis, Git, DDD, PostgreSQL, Linux, Java, Angular, AI) | $VAULT/Knowledge/<Area>/ |
+| Conhecimento específico do projeto (business rules, features, bugs, ADRs, handoffs, releases, infraestrutura do projeto, troubleshooting do projeto, peculiaridades de framework do projeto) | $VAULT/Projects/<Project>/... |
+| Rascunhos temporários e notas inacabadas | $VAULT/Inbox/ |
 
 Nunca misture conhecimento de repositórios diferentes.
 
@@ -173,7 +173,7 @@ Logging
 
 Se o conhecimento for reutilizável entre projetos, armazene em:
 
-~/obsidian/Knowledge/
+$VAULT/Knowledge/
 
 Se o conhecimento for específico do sistema atual, armazene em:
 
@@ -201,7 +201,7 @@ MapLibre configuration unique to this project
 
 Conhecimento geral reutilizável de framework pertence a:
 
-~/obsidian/Knowledge/
+$VAULT/Knowledge/
 
 Exemplos
 
@@ -327,7 +327,7 @@ Lembretes pessoais.
 
 Mantenha informação temporária em:
 
-~/obsidian/Inbox/
+$VAULT/Inbox/
 
 Não trate notas do Inbox como memória permanente do projeto.
 
@@ -385,9 +385,9 @@ Antes de criar conhecimento:
 
 Busque documentação existente nesta ordem:
 
-1. ~/obsidian/Projects/<Project>/
+1. $VAULT/Projects/<Project>/
 
-2. ~/obsidian/Knowledge/
+2. $VAULT/Knowledge/
 
 Nunca busque outras pastas Projects/* como destinos de escrita ou duplicatas para mesclar entre projetos.
 
