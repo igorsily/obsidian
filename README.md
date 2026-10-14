@@ -91,16 +91,25 @@ npx skills add igorsily/obsidian -a cursor -a claude-code -g
 
 ## Vault padrão
 
-```
-~/obsidian
-```
+Primeiro diretório existente entre:
+
+1. `$OBSIDIAN_VAULT`
+2. `/mnt/c/Users/$USER/Documents/obsidian` (WSL)
+3. `~/obsidian`
+
+## Modos
+
+- **Leitura:** carrega `INDEX.md`, `Architecture.md`, o último handoff e os ADRs relevantes antes de começar.
+- **Escrita:** grava handoff, ADRs e notas de `Knowledge/` ao terminar ou depois de abrir PR/MR.
+
+Com o [agent-kit](https://github.com/igorsily/agent-kit), os dois modos rodam por hooks: a leitura no início da sessão e a escrita quando um PR/MR é aberto.
 
 ---
 
 ## Estrutura de pastas
 
 ```
-~/obsidian/
+$VAULT/
 
     Projects/
 

@@ -56,11 +56,7 @@ cp -r obsidian ~/.cursor/skills/engineering-memory
 
 ## Vault
 
-O vault padrão fica em:
-
-```
-~/obsidian
-```
+O vault é o primeiro diretório existente entre `$OBSIDIAN_VAULT`, `/mnt/c/Users/$USER/Documents/obsidian` (WSL) e `~/obsidian`. Para fixar o caminho, exporte `OBSIDIAN_VAULT` no shell ou em `~/.config/agent-kit/env`.
 
 Se não existir, o skill deve criá-lo automaticamente com:
 
@@ -74,7 +70,7 @@ Inbox/
 Cada repositório detectado mapeia para:
 
 ```
-~/obsidian/Projects/<Project>/
+$VAULT/Projects/<Project>/
 ```
 
 Se a pasta do projeto não existir, o skill inicializa a partir de `project-template/` sem pedir confirmação.
@@ -82,7 +78,7 @@ Se a pasta do projeto não existir, o skill inicializa a partir de `project-temp
 Conhecimento de engenharia reutilizável fica em:
 
 ```
-~/obsidian/Knowledge/
+$VAULT/Knowledge/
 ```
 
 ---
