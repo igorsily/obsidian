@@ -73,11 +73,11 @@ Evite links que possam referenciar acidentalmente a documentação de outro proj
 
 Busque e vincule apenas dentro de:
 
-~/obsidian/Projects/<Project>/
+$VAULT/Projects/<Project>/
 
 e, quando relevante,
 
-~/obsidian/Knowledge/
+$VAULT/Knowledge/
 
 Nunca crie links que dependam de uma nota de outro Projects/* como destino primário.
 
@@ -87,7 +87,7 @@ Nunca crie links que dependam de uma nota de outro Projects/* como destino prim�
 
 Conhecimento de engenharia reutilizável fica na raiz do vault:
 
-~/obsidian/Knowledge/<Area>/
+$VAULT/Knowledge/<Area>/
 
 Vincule com um path explícito sob o Knowledge global.
 

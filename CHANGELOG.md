@@ -8,6 +8,20 @@ O versionamento segue Semantic Versioning.
 
 ---
 
+## [1.1.0]
+
+### Adicionado
+
+- Modos explícitos de leitura (início de tarefa) e escrita (fim de tarefa ou após PR/MR)
+- Resolução do vault por `OBSIDIAN_VAULT`, path do WSL e `~/obsidian`
+- Resolução do projeto pelo repositório remoto e pelo mapeamento do agent-kit (`ak-project`)
+
+### Alterado
+
+- Paths fixos `~/obsidian` substituídos por `$VAULT` em todas as regras
+
+---
+
 ## [1.0.0]
 
 ### Adicionado

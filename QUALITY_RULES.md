@@ -225,9 +225,9 @@ Antes de escrever:
 
 Busque documentação existente nesta ordem:
 
-1. ~/obsidian/Projects/<Project>/
+1. $VAULT/Projects/<Project>/
 
-2. ~/obsidian/Knowledge/
+2. $VAULT/Knowledge/
 
 Nunca busque outras pastas Projects/* por conteúdo para mesclar.
 

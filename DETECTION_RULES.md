@@ -77,7 +77,7 @@ Fluxo esperado:
 
 3. Verificar
 
-~/obsidian/Projects/<Project>
+$VAULT/Projects/<Project>
 
 4. Existe?
 
@@ -89,7 +89,13 @@ Fluxo esperado:
 
 ## Nome do Projeto
 
-Use o nome do repositório ou o nome da pasta raiz do workspace como slug do projeto.
+Resolva o nome nesta ordem:
+
+1. Saída `project` de `~/.agent-kit/bin/ak-project` (quando o agent-kit estiver instalado). Ela aplica o mapeamento de `~/.agent-kit/config/projects.tsv`.
+2. Nome do repositório remoto (`git remote get-url origin`, sem `.git`). Worktrees e clones com outro nome de diretório caem na mesma pasta.
+3. Nome da pasta raiz do repositório, quando não houver remote.
+
+Antes de criar uma pasta nova, procure em `$VAULT/Projects/` uma pasta existente com o mesmo nome ignorando maiúsculas e prefixos (ex.: `hydrametric-evacuation-routes` → `Hydrametric`). Se encontrar, use-a.
 
 Exemplo
 
@@ -97,11 +103,11 @@ Repositório awesome-api
 
 torna-se
 
-~/obsidian/Projects/awesome-api/
+$VAULT/Projects/awesome-api/
 
 ## Inicialização do Vault
 
-Se ~/obsidian não existir:
+Se $VAULT não existir:
 
 - crie
 - crie Projects/
@@ -114,7 +120,7 @@ Nunca pergunte ao usuário onde armazenar documentação.
 
 ## Inicialização do Projeto
 
-Se ~/obsidian/Projects/<Project> não existir:
+Se $VAULT/Projects/<Project> não existir:
 
 - replique o diretório `project-template/` da skill nesse path
 - continue normalmente
@@ -515,9 +521,9 @@ Leia a documentação existente antes de gerar nova documentação.
 
 Escopo de busca:
 
-1. ~/obsidian/Projects/<Project>/
+1. $VAULT/Projects/<Project>/
 
-2. ~/obsidian/Knowledge/ quando o tema for conhecimento de engenharia reutilizável
+2. $VAULT/Knowledge/ quando o tema for conhecimento de engenharia reutilizável
 
 Nunca leia ou escreva em outras pastas Projects/* na tarefa atual.
 
